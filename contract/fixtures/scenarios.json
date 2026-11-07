@@ -1,0 +1,53 @@
+[
+ {
+  "id": "edmonton_2024",
+  "label": "Edmonton · July 2024 heat + wildfire smoke",
+  "city": "Edmonton, AB",
+  "station": "ECCC Edmonton Blatchford (temp) + Edmonton Intl A (smoke)",
+  "start": "2024-07-15T00:00",
+  "end": "2024-07-26T23:00",
+  "center": [
+   53.54,
+   -113.49
+  ],
+  "office": [
+   53.5461,
+   -113.4938
+  ],
+  "has_smoke": true
+ },
+ {
+  "id": "edmonton_2021",
+  "label": "Edmonton · June 2021 heat dome",
+  "city": "Edmonton, AB",
+  "station": "ECCC Edmonton Blatchford",
+  "start": "2021-06-24T00:00",
+  "end": "2021-07-04T23:00",
+  "center": [
+   53.54,
+   -113.49
+  ],
+  "office": [
+   53.5461,
+   -113.4938
+  ],
+  "has_smoke": false
+ },
+ {
+  "id": "vancouver_2021",
+  "label": "Metro Vancouver · June 2021 heat dome",
+  "city": "Tri-Cities & Maple Ridge, BC",
+  "station": "ECCC Pitt Meadows CS (temp) + Vancouver Intl A (smoke)",
+  "start": "2021-06-24T00:00",
+  "end": "2021-07-03T23:00",
+  "center": [
+   49.255,
+   -122.77
+  ],
+  "office": [
+   49.262,
+   -122.781
+  ],
+  "has_smoke": false
+ }
+]

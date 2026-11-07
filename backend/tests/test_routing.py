@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from backend.app.routing import Stop, haversine_km, nearest_neighbour, plan_routes, split_round_robin
+from backend.app.routing import Stop, run_km, haversine_km, nearest_neighbour, plan_routes, split_by_proximity, split_round_robin
 
 
 def test_haversine_known_distance():
@@ -32,3 +32,31 @@ def test_plan_routes_etas_increase():
         assert etas == sorted(etas) and etas[0] >= "2024-07-18T09:00"
         assert r["path"][0] == [53.54, -113.49]
         assert len(r["path"]) == len(r["stops"]) + 1
+
+
+def test_proximity_split_seeds_with_most_urgent_and_keeps_runs_local():
+    north = [Stop(f"n{i}", 53.62 + i * 0.002, -113.5) for i in range(3)]
+    south = [Stop(f"s{i}", 53.45 + i * 0.002, -113.5) for i in range(3)]
+    ranked = [north[0], south[0], north[1], south[1], north[2], south[2]]
+    groups = split_by_proximity(ranked, 2)
+    assert [g[0].client_id for g in groups] == ["n0", "s0"]
+    assert {s.client_id[0] for s in groups[0]} == {"n"}
+    assert {s.client_id[0] for s in groups[1]} == {"s"}
+
+
+def test_proximity_split_balances_load_and_handles_few_stops():
+    stops = [Stop(f"c{i}", 53.5, -113.5) for i in range(7)]
+    sizes = sorted(len(g) for g in split_by_proximity(stops, 3))
+    assert sizes == [2, 2, 3]
+    assert [len(g) for g in split_by_proximity(stops[:1], 3)] == [1, 0, 0]
+
+
+def test_plan_never_longer_than_round_robin():
+    import random
+    rng = random.Random(1)
+    office = (53.54, -113.49)
+    for _ in range(20):
+        stops = [Stop(f"c{i}", 53.45 + rng.random() * 0.2, -113.65 + rng.random() * 0.3) for i in range(12)]
+        planned = plan_routes(stops, 3, office, datetime(2024, 7, 18, 9))
+        rr = sum(run_km(office, nearest_neighbour(office, g)) for g in split_round_robin(stops, 3))
+        assert sum(r["distance_km"] for r in planned) <= rr * 1.3 + 0.5  # distance_km includes the road factor

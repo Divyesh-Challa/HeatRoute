@@ -1,0 +1,287 @@
+{
+ "profile": {
+  "id": "c01",
+  "name": "Margaret T.",
+  "age": 84,
+  "lat": 53.5454,
+  "lon": -113.49622,
+  "neighbourhood": "Downtown",
+  "lives_alone": true,
+  "conditions": [
+   "heart disease"
+  ],
+  "mobility_limited": true,
+  "cognitive_impairment": false,
+  "has_ac": false,
+  "floor": 6,
+  "top_floor": true,
+  "orientation": "S",
+  "insulation": "average"
+ },
+ "assessment": {
+  "rank": 1,
+  "client_id": "c01",
+  "name": "Margaret T.",
+  "age": 84,
+  "lat": 53.5454,
+  "lon": -113.49622,
+  "neighbourhood": "Downtown",
+  "score": 57.7,
+  "band": "red",
+  "forecast_band": "red",
+  "indoor_c": 34.8,
+  "hours_above_26": 24,
+  "hours_above_31": 12,
+  "escalated": true,
+  "reasons": [
+   "34.8°C, 5 h straight above 31°C",
+   "no relief overnight",
+   "age 84",
+   "lives alone"
+  ],
+  "status": "needs_visit",
+  "last_visit": null,
+  "phone_list_rank": 24,
+  "breakdown": {
+   "exposure": 168.4,
+   "exposure_norm": 0.75,
+   "vulnerability": 8,
+   "smoke_bonus": 0,
+   "hot_night": true,
+   "factors": [
+    {
+     "label": "age 84",
+     "points": 2
+    },
+    {
+     "label": "lives alone",
+     "points": 2
+    },
+    {
+     "label": "no AC",
+     "points": 2
+    },
+    {
+     "label": "heart disease",
+     "points": 1
+    },
+    {
+     "label": "limited mobility",
+     "points": 1
+    }
+   ]
+  }
+ },
+ "temps": [
+  {
+   "t": "2024-07-16T19:00",
+   "indoor_c": 32.5,
+   "outdoor_c": 31.3,
+   "smoke": false,
+   "future": false
+  },
+  {
+   "t": "2024-07-16T20:00",
+   "indoor_c": 32.7,
+   "outdoor_c": 30.5,
+   "smoke": false,
+   "future": false
+  },
+  {
+   "t": "2024-07-16T21:00",
+   "indoor_c": 32.7,
+   "outdoor_c": 29.5,
+   "smoke": false,
+   "future": false
+  },
+  {
+   "t": "2024-07-16T22:00",
+   "indoor_c": 32.6,
+   "outdoor_c": 27.4,
+   "smoke": false,
+   "future": false
+  },
+  {
+   "t": "2024-07-16T23:00",
+   "indoor_c": 32.3,
+   "outdoor_c": 25.7,
+   "smoke": false,
+   "future": false
+  },
+  {
+   "t": "2024-07-17T00:00",
+   "indoor_c": 31.9,
+   "outdoor_c": 24.6,
+   "smoke": false,
+   "future": false
+  },
+  {
+   "t": "2024-07-17T01:00",
+   "indoor_c": 31.4,
+   "outdoor_c": 23.6,
+   "smoke": false,
+   "future": false
+  },
+  {
+   "t": "2024-07-17T02:00",
+   "indoor_c": 30.9,
+   "outdoor_c": 22.2,
+   "smoke": false,
+   "future": false
+  },
+  {
+   "t": "2024-07-17T03:00",
+   "indoor_c": 30.2,
+   "outdoor_c": 21.8,
+   "smoke": false,
+   "future": false
+  },
+  {
+   "t": "2024-07-17T04:00",
+   "indoor_c": 29.6,
+   "outdoor_c": 21.1,
+   "smoke": false,
+   "future": false
+  },
+  {
+   "t": "2024-07-17T05:00",
+   "indoor_c": 29.0,
+   "outdoor_c": 19.8,
+   "smoke": false,
+   "future": false
+  },
+  {
+   "t": "2024-07-17T06:00",
+   "indoor_c": 28.3,
+   "outdoor_c": 19.4,
+   "smoke": false,
+   "future": false
+  },
+  {
+   "t": "2024-07-17T07:00",
+   "indoor_c": 27.6,
+   "outdoor_c": 20.8,
+   "smoke": false,
+   "future": false
+  },
+  {
+   "t": "2024-07-17T08:00",
+   "indoor_c": 27.3,
+   "outdoor_c": 23.6,
+   "smoke": false,
+   "future": false
+  },
+  {
+   "t": "2024-07-17T09:00",
+   "indoor_c": 27.3,
+   "outdoor_c": 26.4,
+   "smoke": false,
+   "future": false
+  },
+  {
+   "t": "2024-07-17T10:00",
+   "indoor_c": 27.8,
+   "outdoor_c": 27.1,
+   "smoke": false,
+   "future": false
+  },
+  {
+   "t": "2024-07-17T11:00",
+   "indoor_c": 28.5,
+   "outdoor_c": 29.3,
+   "smoke": false,
+   "future": false
+  },
+  {
+   "t": "2024-07-17T12:00",
+   "indoor_c": 29.5,
+   "outdoor_c": 30.8,
+   "smoke": false,
+   "future": false
+  },
+  {
+   "t": "2024-07-17T13:00",
+   "indoor_c": 30.6,
+   "outdoor_c": 31.5,
+   "smoke": false,
+   "future": false
+  },
+  {
+   "t": "2024-07-17T14:00",
+   "indoor_c": 31.6,
+   "outdoor_c": 32.7,
+   "smoke": false,
+   "future": false
+  },
+  {
+   "t": "2024-07-17T15:00",
+   "indoor_c": 32.7,
+   "outdoor_c": 33.0,
+   "smoke": false,
+   "future": false
+  },
+  {
+   "t": "2024-07-17T16:00",
+   "indoor_c": 33.6,
+   "outdoor_c": 33.6,
+   "smoke": false,
+   "future": false
+  },
+  {
+   "t": "2024-07-17T17:00",
+   "indoor_c": 34.3,
+   "outdoor_c": 33.4,
+   "smoke": false,
+   "future": false
+  },
+  {
+   "t": "2024-07-17T18:00",
+   "indoor_c": 34.8,
+   "outdoor_c": 30.4,
+   "smoke": false,
+   "future": false
+  },
+  {
+   "t": "2024-07-17T19:00",
+   "indoor_c": 34.8,
+   "outdoor_c": 27.2,
+   "smoke": false,
+   "future": true
+  },
+  {
+   "t": "2024-07-17T20:00",
+   "indoor_c": 34.4,
+   "outdoor_c": 28.0,
+   "smoke": false,
+   "future": true
+  },
+  {
+   "t": "2024-07-17T21:00",
+   "indoor_c": 34.0,
+   "outdoor_c": 29.1,
+   "smoke": false,
+   "future": true
+  },
+  {
+   "t": "2024-07-17T22:00",
+   "indoor_c": 33.7,
+   "outdoor_c": 28.5,
+   "smoke": false,
+   "future": true
+  },
+  {
+   "t": "2024-07-17T23:00",
+   "indoor_c": 33.4,
+   "outdoor_c": 27.3,
+   "smoke": false,
+   "future": true
+  },
+  {
+   "t": "2024-07-18T00:00",
+   "indoor_c": 33.0,
+   "outdoor_c": 25.9,
+   "smoke": false,
+   "future": true
+  }
+ ]
+}

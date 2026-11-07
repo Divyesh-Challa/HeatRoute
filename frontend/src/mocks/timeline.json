@@ -1,0 +1,1448 @@
+{
+ "scenario": "edmonton_2024",
+ "start": "2024-07-15T00:00",
+ "end": "2024-07-26T23:00",
+ "step_hours": 1,
+ "hours": [
+  {
+   "t": "2024-07-15T00:00",
+   "outdoor_c": 18.2,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-15T01:00",
+   "outdoor_c": 17.4,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-15T02:00",
+   "outdoor_c": 16.7,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-15T03:00",
+   "outdoor_c": 15.6,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-15T04:00",
+   "outdoor_c": 15.4,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-15T05:00",
+   "outdoor_c": 15.3,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-15T06:00",
+   "outdoor_c": 14.7,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-15T07:00",
+   "outdoor_c": 15.1,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-15T08:00",
+   "outdoor_c": 16.1,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-15T09:00",
+   "outdoor_c": 17.7,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-15T10:00",
+   "outdoor_c": 20.4,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-15T11:00",
+   "outdoor_c": 24.2,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-15T12:00",
+   "outdoor_c": 24.7,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-15T13:00",
+   "outdoor_c": 25.0,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-15T14:00",
+   "outdoor_c": 24.8,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-15T15:00",
+   "outdoor_c": 26.3,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-15T16:00",
+   "outdoor_c": 27.5,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-15T17:00",
+   "outdoor_c": 28.1,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-15T18:00",
+   "outdoor_c": 27.4,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-15T19:00",
+   "outdoor_c": 28.6,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-15T20:00",
+   "outdoor_c": 27.3,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-15T21:00",
+   "outdoor_c": 26.4,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-15T22:00",
+   "outdoor_c": 25.0,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-15T23:00",
+   "outdoor_c": 24.7,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-16T00:00",
+   "outdoor_c": 23.8,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-16T01:00",
+   "outdoor_c": 23.0,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-16T02:00",
+   "outdoor_c": 22.4,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-16T03:00",
+   "outdoor_c": 22.1,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-16T04:00",
+   "outdoor_c": 22.0,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-16T05:00",
+   "outdoor_c": 21.4,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-16T06:00",
+   "outdoor_c": 20.9,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-16T07:00",
+   "outdoor_c": 21.3,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-16T08:00",
+   "outdoor_c": 21.7,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-16T09:00",
+   "outdoor_c": 22.2,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-16T10:00",
+   "outdoor_c": 23.6,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-16T11:00",
+   "outdoor_c": 25.0,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-16T12:00",
+   "outdoor_c": 26.4,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-16T13:00",
+   "outdoor_c": 28.0,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-16T14:00",
+   "outdoor_c": 29.3,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-16T15:00",
+   "outdoor_c": 29.8,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-16T16:00",
+   "outdoor_c": 29.6,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-16T17:00",
+   "outdoor_c": 31.0,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-16T18:00",
+   "outdoor_c": 30.7,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-16T19:00",
+   "outdoor_c": 31.3,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-16T20:00",
+   "outdoor_c": 30.5,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-16T21:00",
+   "outdoor_c": 29.5,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-16T22:00",
+   "outdoor_c": 27.4,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-16T23:00",
+   "outdoor_c": 25.7,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-17T00:00",
+   "outdoor_c": 24.6,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-17T01:00",
+   "outdoor_c": 23.6,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-17T02:00",
+   "outdoor_c": 22.2,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-17T03:00",
+   "outdoor_c": 21.8,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-17T04:00",
+   "outdoor_c": 21.1,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-17T05:00",
+   "outdoor_c": 19.8,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-17T06:00",
+   "outdoor_c": 19.4,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-17T07:00",
+   "outdoor_c": 20.8,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-17T08:00",
+   "outdoor_c": 23.6,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-17T09:00",
+   "outdoor_c": 26.4,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-17T10:00",
+   "outdoor_c": 27.1,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-17T11:00",
+   "outdoor_c": 29.3,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-17T12:00",
+   "outdoor_c": 30.8,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-17T13:00",
+   "outdoor_c": 31.5,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-17T14:00",
+   "outdoor_c": 32.7,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-17T15:00",
+   "outdoor_c": 33.0,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-17T16:00",
+   "outdoor_c": 33.6,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-17T17:00",
+   "outdoor_c": 33.4,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-17T18:00",
+   "outdoor_c": 30.4,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-17T19:00",
+   "outdoor_c": 27.2,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-17T20:00",
+   "outdoor_c": 28.0,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-17T21:00",
+   "outdoor_c": 29.1,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-17T22:00",
+   "outdoor_c": 28.5,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-17T23:00",
+   "outdoor_c": 27.3,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-18T00:00",
+   "outdoor_c": 25.9,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-18T01:00",
+   "outdoor_c": 24.7,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-18T02:00",
+   "outdoor_c": 23.5,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-18T03:00",
+   "outdoor_c": 21.8,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-18T04:00",
+   "outdoor_c": 20.5,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-18T05:00",
+   "outdoor_c": 19.6,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-18T06:00",
+   "outdoor_c": 19.0,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-18T07:00",
+   "outdoor_c": 20.6,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-18T08:00",
+   "outdoor_c": 23.5,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-18T09:00",
+   "outdoor_c": 25.3,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-18T10:00",
+   "outdoor_c": 27.8,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-18T11:00",
+   "outdoor_c": 30.2,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-18T12:00",
+   "outdoor_c": 30.7,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-18T13:00",
+   "outdoor_c": 32.3,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-18T14:00",
+   "outdoor_c": 33.2,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-18T15:00",
+   "outdoor_c": 33.9,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-18T16:00",
+   "outdoor_c": 33.9,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-18T17:00",
+   "outdoor_c": 34.8,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-18T18:00",
+   "outdoor_c": 34.3,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-18T19:00",
+   "outdoor_c": 33.7,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-18T20:00",
+   "outdoor_c": 32.8,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-18T21:00",
+   "outdoor_c": 31.2,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-18T22:00",
+   "outdoor_c": 29.6,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-18T23:00",
+   "outdoor_c": 28.4,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-19T00:00",
+   "outdoor_c": 26.0,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-19T01:00",
+   "outdoor_c": 24.9,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-19T02:00",
+   "outdoor_c": 22.7,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-19T03:00",
+   "outdoor_c": 21.6,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-19T04:00",
+   "outdoor_c": 21.1,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-19T05:00",
+   "outdoor_c": 21.0,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-19T06:00",
+   "outdoor_c": 19.6,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-19T07:00",
+   "outdoor_c": 20.2,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-19T08:00",
+   "outdoor_c": 20.8,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-19T09:00",
+   "outdoor_c": 22.4,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-19T10:00",
+   "outdoor_c": 24.5,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-19T11:00",
+   "outdoor_c": 27.8,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-19T12:00",
+   "outdoor_c": 29.8,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-19T13:00",
+   "outdoor_c": 31.6,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-19T14:00",
+   "outdoor_c": 32.5,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-19T15:00",
+   "outdoor_c": 33.1,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-19T16:00",
+   "outdoor_c": 32.7,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-19T17:00",
+   "outdoor_c": 33.3,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-19T18:00",
+   "outdoor_c": 32.6,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-19T19:00",
+   "outdoor_c": 32.1,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-19T20:00",
+   "outdoor_c": 31.2,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-19T21:00",
+   "outdoor_c": 29.8,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-19T22:00",
+   "outdoor_c": 28.7,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-19T23:00",
+   "outdoor_c": 26.9,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-20T00:00",
+   "outdoor_c": 25.4,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-20T01:00",
+   "outdoor_c": 24.3,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-20T02:00",
+   "outdoor_c": 23.1,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-20T03:00",
+   "outdoor_c": 22.0,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-20T04:00",
+   "outdoor_c": 21.8,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-20T05:00",
+   "outdoor_c": 20.0,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-20T06:00",
+   "outdoor_c": 19.1,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-20T07:00",
+   "outdoor_c": 19.2,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-20T08:00",
+   "outdoor_c": 20.0,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-20T09:00",
+   "outdoor_c": 21.4,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-20T10:00",
+   "outdoor_c": 23.4,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-20T11:00",
+   "outdoor_c": 24.5,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-20T12:00",
+   "outdoor_c": 27.0,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-20T13:00",
+   "outdoor_c": 27.8,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-20T14:00",
+   "outdoor_c": 29.0,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-20T15:00",
+   "outdoor_c": 29.1,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-20T16:00",
+   "outdoor_c": 29.8,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-20T17:00",
+   "outdoor_c": 30.4,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-20T18:00",
+   "outdoor_c": 30.5,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-20T19:00",
+   "outdoor_c": 30.3,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-20T20:00",
+   "outdoor_c": 29.2,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-20T21:00",
+   "outdoor_c": 28.0,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-20T22:00",
+   "outdoor_c": 26.8,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-20T23:00",
+   "outdoor_c": 25.5,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-21T00:00",
+   "outdoor_c": 25.0,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-21T01:00",
+   "outdoor_c": 23.8,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-21T02:00",
+   "outdoor_c": 23.1,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-21T03:00",
+   "outdoor_c": 22.1,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-21T04:00",
+   "outdoor_c": 21.3,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-21T05:00",
+   "outdoor_c": 20.8,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-21T06:00",
+   "outdoor_c": 20.4,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-21T07:00",
+   "outdoor_c": 21.2,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-21T08:00",
+   "outdoor_c": 22.9,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-21T09:00",
+   "outdoor_c": 24.6,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-21T10:00",
+   "outdoor_c": 26.2,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-21T11:00",
+   "outdoor_c": 28.3,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-21T12:00",
+   "outdoor_c": 29.5,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-21T13:00",
+   "outdoor_c": 30.9,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-21T14:00",
+   "outdoor_c": 32.0,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-21T15:00",
+   "outdoor_c": 33.0,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-21T16:00",
+   "outdoor_c": 32.9,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-21T17:00",
+   "outdoor_c": 33.1,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-21T18:00",
+   "outdoor_c": 32.1,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-21T19:00",
+   "outdoor_c": 31.9,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-21T20:00",
+   "outdoor_c": 31.3,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-21T21:00",
+   "outdoor_c": 30.0,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-21T22:00",
+   "outdoor_c": 28.4,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-21T23:00",
+   "outdoor_c": 27.3,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-22T00:00",
+   "outdoor_c": 26.5,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-22T01:00",
+   "outdoor_c": 25.2,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-22T02:00",
+   "outdoor_c": 23.9,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-22T03:00",
+   "outdoor_c": 23.9,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-22T04:00",
+   "outdoor_c": 23.2,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-22T05:00",
+   "outdoor_c": 22.4,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-22T06:00",
+   "outdoor_c": 22.0,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-22T07:00",
+   "outdoor_c": 22.5,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-22T08:00",
+   "outdoor_c": 23.9,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-22T09:00",
+   "outdoor_c": 25.7,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-22T10:00",
+   "outdoor_c": 27.9,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-22T11:00",
+   "outdoor_c": 29.9,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-22T12:00",
+   "outdoor_c": 30.3,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-22T13:00",
+   "outdoor_c": 31.2,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-22T14:00",
+   "outdoor_c": 32.8,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-22T15:00",
+   "outdoor_c": 32.0,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-22T16:00",
+   "outdoor_c": 32.9,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-22T17:00",
+   "outdoor_c": 32.7,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-22T18:00",
+   "outdoor_c": 31.3,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-22T19:00",
+   "outdoor_c": 30.2,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-22T20:00",
+   "outdoor_c": 28.7,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-22T21:00",
+   "outdoor_c": 27.5,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-22T22:00",
+   "outdoor_c": 26.4,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-22T23:00",
+   "outdoor_c": 24.9,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-23T00:00",
+   "outdoor_c": 23.9,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-23T01:00",
+   "outdoor_c": 23.7,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-23T02:00",
+   "outdoor_c": 23.0,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-23T03:00",
+   "outdoor_c": 22.1,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-23T04:00",
+   "outdoor_c": 21.6,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-23T05:00",
+   "outdoor_c": 21.2,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-23T06:00",
+   "outdoor_c": 21.0,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-23T07:00",
+   "outdoor_c": 21.1,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-23T08:00",
+   "outdoor_c": 22.0,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-23T09:00",
+   "outdoor_c": 22.7,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-23T10:00",
+   "outdoor_c": 23.5,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-23T11:00",
+   "outdoor_c": 24.8,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-23T12:00",
+   "outdoor_c": 26.5,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-23T13:00",
+   "outdoor_c": 28.3,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-23T14:00",
+   "outdoor_c": 28.1,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-23T15:00",
+   "outdoor_c": 28.6,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-23T16:00",
+   "outdoor_c": 28.0,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-23T17:00",
+   "outdoor_c": 26.8,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-23T18:00",
+   "outdoor_c": 26.7,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-23T19:00",
+   "outdoor_c": 25.3,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-23T20:00",
+   "outdoor_c": 24.7,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-23T21:00",
+   "outdoor_c": 23.7,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-23T22:00",
+   "outdoor_c": 23.4,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-23T23:00",
+   "outdoor_c": 22.7,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-24T00:00",
+   "outdoor_c": 21.9,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-24T01:00",
+   "outdoor_c": 21.0,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-24T02:00",
+   "outdoor_c": 20.3,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-24T03:00",
+   "outdoor_c": 20.3,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-24T04:00",
+   "outdoor_c": 20.0,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-24T05:00",
+   "outdoor_c": 19.1,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-24T06:00",
+   "outdoor_c": 18.4,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-24T07:00",
+   "outdoor_c": 18.8,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-24T08:00",
+   "outdoor_c": 19.3,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-24T09:00",
+   "outdoor_c": 19.7,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-24T10:00",
+   "outdoor_c": 19.8,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-24T11:00",
+   "outdoor_c": 18.6,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-24T12:00",
+   "outdoor_c": 19.3,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-24T13:00",
+   "outdoor_c": 21.2,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-24T14:00",
+   "outdoor_c": 22.7,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-24T15:00",
+   "outdoor_c": 20.8,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-24T16:00",
+   "outdoor_c": 22.0,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-24T17:00",
+   "outdoor_c": 23.2,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-24T18:00",
+   "outdoor_c": 23.1,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-24T19:00",
+   "outdoor_c": 22.5,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-24T20:00",
+   "outdoor_c": 21.4,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-24T21:00",
+   "outdoor_c": 21.0,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-24T22:00",
+   "outdoor_c": 19.9,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-24T23:00",
+   "outdoor_c": 19.0,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-25T00:00",
+   "outdoor_c": 18.6,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-25T01:00",
+   "outdoor_c": 18.2,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-25T02:00",
+   "outdoor_c": 16.5,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-25T03:00",
+   "outdoor_c": 14.9,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-25T04:00",
+   "outdoor_c": 13.1,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-25T05:00",
+   "outdoor_c": 12.7,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-25T06:00",
+   "outdoor_c": 12.3,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-25T07:00",
+   "outdoor_c": 12.2,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-25T08:00",
+   "outdoor_c": 12.2,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-25T09:00",
+   "outdoor_c": 12.4,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-25T10:00",
+   "outdoor_c": 12.4,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-25T11:00",
+   "outdoor_c": 12.9,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-25T12:00",
+   "outdoor_c": 12.8,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-25T13:00",
+   "outdoor_c": 13.0,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-25T14:00",
+   "outdoor_c": 15.1,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-25T15:00",
+   "outdoor_c": 14.5,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-25T16:00",
+   "outdoor_c": 15.1,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-25T17:00",
+   "outdoor_c": 12.9,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-25T18:00",
+   "outdoor_c": 12.9,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-25T19:00",
+   "outdoor_c": 12.6,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-25T20:00",
+   "outdoor_c": 11.8,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-25T21:00",
+   "outdoor_c": 11.1,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-25T22:00",
+   "outdoor_c": 10.8,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-25T23:00",
+   "outdoor_c": 10.8,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-26T00:00",
+   "outdoor_c": 10.6,
+   "smoke": true
+  },
+  {
+   "t": "2024-07-26T01:00",
+   "outdoor_c": 10.7,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-26T02:00",
+   "outdoor_c": 11.4,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-26T03:00",
+   "outdoor_c": 11.7,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-26T04:00",
+   "outdoor_c": 11.8,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-26T05:00",
+   "outdoor_c": 12.3,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-26T06:00",
+   "outdoor_c": 12.5,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-26T07:00",
+   "outdoor_c": 11.7,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-26T08:00",
+   "outdoor_c": 12.4,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-26T09:00",
+   "outdoor_c": 13.5,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-26T10:00",
+   "outdoor_c": 14.1,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-26T11:00",
+   "outdoor_c": 14.8,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-26T12:00",
+   "outdoor_c": 15.5,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-26T13:00",
+   "outdoor_c": 15.8,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-26T14:00",
+   "outdoor_c": 16.9,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-26T15:00",
+   "outdoor_c": 17.4,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-26T16:00",
+   "outdoor_c": 17.6,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-26T17:00",
+   "outdoor_c": 17.5,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-26T18:00",
+   "outdoor_c": 17.4,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-26T19:00",
+   "outdoor_c": 17.2,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-26T20:00",
+   "outdoor_c": 16.7,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-26T21:00",
+   "outdoor_c": 15.4,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-26T22:00",
+   "outdoor_c": 14.1,
+   "smoke": false
+  },
+  {
+   "t": "2024-07-26T23:00",
+   "outdoor_c": 13.4,
+   "smoke": false
+  }
+ ]
+}

@@ -1,0 +1,2874 @@
+{
+ "t": "2024-07-17T18:00",
+ "outdoor_c": 30.4,
+ "smoke": false,
+ "heat_warning": true,
+ "counts": {
+  "red": 8,
+  "amber": 14,
+  "green": 38,
+  "handled": 0
+ },
+ "clients": [
+  {
+   "rank": 1,
+   "client_id": "c01",
+   "name": "Margaret T.",
+   "age": 84,
+   "lat": 53.5454,
+   "lon": -113.49622,
+   "neighbourhood": "Downtown",
+   "score": 57.7,
+   "band": "red",
+   "forecast_band": "red",
+   "indoor_c": 34.8,
+   "hours_above_26": 24,
+   "hours_above_31": 12,
+   "escalated": true,
+   "reasons": [
+    "34.8°C, 5 h straight above 31°C",
+    "no relief overnight",
+    "age 84",
+    "lives alone"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 24,
+   "breakdown": {
+    "exposure": 168.4,
+    "exposure_norm": 0.75,
+    "vulnerability": 8,
+    "smoke_bonus": 0,
+    "hot_night": true,
+    "factors": [
+     {
+      "label": "age 84",
+      "points": 2
+     },
+     {
+      "label": "lives alone",
+      "points": 2
+     },
+     {
+      "label": "no AC",
+      "points": 2
+     },
+     {
+      "label": "heart disease",
+      "points": 1
+     },
+     {
+      "label": "limited mobility",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 2,
+   "client_id": "c26",
+   "name": "Desmond F.",
+   "age": 93,
+   "lat": 53.555,
+   "lon": -113.53987,
+   "neighbourhood": "Westmount",
+   "score": 53.7,
+   "band": "red",
+   "forecast_band": "red",
+   "indoor_c": 33.5,
+   "hours_above_26": 24,
+   "hours_above_31": 10,
+   "escalated": true,
+   "reasons": [
+    "33.5°C, 4 h straight above 31°C",
+    "no relief overnight",
+    "age 93",
+    "lives alone"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 8,
+   "breakdown": {
+    "exposure": 126.8,
+    "exposure_norm": 0.65,
+    "vulnerability": 9,
+    "smoke_bonus": 0,
+    "hot_night": true,
+    "factors": [
+     {
+      "label": "age 93",
+      "points": 3
+     },
+     {
+      "label": "lives alone",
+      "points": 2
+     },
+     {
+      "label": "no AC",
+      "points": 2
+     },
+     {
+      "label": "heart disease",
+      "points": 1
+     },
+     {
+      "label": "limited mobility",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 3,
+   "client_id": "c54",
+   "name": "Raymond J.",
+   "age": 84,
+   "lat": 53.51342,
+   "lon": -113.50762,
+   "neighbourhood": "Garneau",
+   "score": 50.0,
+   "band": "red",
+   "forecast_band": "red",
+   "indoor_c": 33.6,
+   "hours_above_26": 24,
+   "hours_above_31": 9,
+   "escalated": true,
+   "reasons": [
+    "33.6°C, 4 h straight above 31°C",
+    "no relief overnight",
+    "age 84",
+    "lives alone"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 25,
+   "breakdown": {
+    "exposure": 112.1,
+    "exposure_norm": 0.61,
+    "vulnerability": 9,
+    "smoke_bonus": 0,
+    "hot_night": true,
+    "factors": [
+     {
+      "label": "age 84",
+      "points": 2
+     },
+     {
+      "label": "lives alone",
+      "points": 2
+     },
+     {
+      "label": "no AC",
+      "points": 2
+     },
+     {
+      "label": "diabetes",
+      "points": 1
+     },
+     {
+      "label": "heart disease",
+      "points": 1
+     },
+     {
+      "label": "cognitive impairment",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 4,
+   "client_id": "c06",
+   "name": "Armando B.",
+   "age": 86,
+   "lat": 53.53374,
+   "lon": -113.47114,
+   "neighbourhood": "Bonnie Doon",
+   "score": 42.8,
+   "band": "red",
+   "forecast_band": "red",
+   "indoor_c": 33.6,
+   "hours_above_26": 24,
+   "hours_above_31": 9,
+   "escalated": true,
+   "reasons": [
+    "33.6°C, 4 h straight above 31°C",
+    "no relief overnight",
+    "age 86",
+    "lives alone"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 17,
+   "breakdown": {
+    "exposure": 112.1,
+    "exposure_norm": 0.61,
+    "vulnerability": 7,
+    "smoke_bonus": 0,
+    "hot_night": true,
+    "factors": [
+     {
+      "label": "age 86",
+      "points": 3
+     },
+     {
+      "label": "lives alone",
+      "points": 2
+     },
+     {
+      "label": "no AC",
+      "points": 2
+     }
+    ]
+   }
+  },
+  {
+   "rank": 5,
+   "client_id": "c15",
+   "name": "Theresa R.",
+   "age": 76,
+   "lat": 53.53771,
+   "lon": -113.47124,
+   "neighbourhood": "Bonnie Doon",
+   "score": 42.0,
+   "band": "red",
+   "forecast_band": "red",
+   "indoor_c": 32.2,
+   "hours_above_26": 24,
+   "hours_above_31": 3,
+   "escalated": true,
+   "reasons": [
+    "32.2°C, 3 h straight above 31°C",
+    "no relief overnight",
+    "age 76",
+    "lives alone"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 37,
+   "breakdown": {
+    "exposure": 95.8,
+    "exposure_norm": 0.55,
+    "vulnerability": 8,
+    "smoke_bonus": 0,
+    "hot_night": true,
+    "factors": [
+     {
+      "label": "age 76",
+      "points": 2
+     },
+     {
+      "label": "lives alone",
+      "points": 2
+     },
+     {
+      "label": "no AC",
+      "points": 2
+     },
+     {
+      "label": "mental illness",
+      "points": 1
+     },
+     {
+      "label": "heart disease",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 6,
+   "client_id": "c32",
+   "name": "Kwame R.",
+   "age": 64,
+   "lat": 53.52491,
+   "lon": -113.4604,
+   "neighbourhood": "Bonnie Doon",
+   "score": 41.8,
+   "band": "red",
+   "forecast_band": "red",
+   "indoor_c": 35.1,
+   "hours_above_26": 19,
+   "hours_above_31": 10,
+   "escalated": true,
+   "reasons": [
+    "35.1°C, 5 h straight above 31°C",
+    "lives alone",
+    "no AC",
+    "kidney disease"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 56,
+   "breakdown": {
+    "exposure": 124.6,
+    "exposure_norm": 0.65,
+    "vulnerability": 6,
+    "smoke_bonus": 0,
+    "hot_night": false,
+    "factors": [
+     {
+      "label": "lives alone",
+      "points": 2
+     },
+     {
+      "label": "no AC",
+      "points": 2
+     },
+     {
+      "label": "kidney disease",
+      "points": 1
+     },
+     {
+      "label": "cognitive impairment",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 7,
+   "client_id": "c55",
+   "name": "Edna D.",
+   "age": 76,
+   "lat": 53.45364,
+   "lon": -113.437,
+   "neighbourhood": "Mill Woods",
+   "score": 38.8,
+   "band": "red",
+   "forecast_band": "red",
+   "indoor_c": 32.2,
+   "hours_above_26": 24,
+   "hours_above_31": 3,
+   "escalated": true,
+   "reasons": [
+    "32.2°C, 3 h straight above 31°C",
+    "no relief overnight",
+    "age 76",
+    "lives alone"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 38,
+   "breakdown": {
+    "exposure": 95.8,
+    "exposure_norm": 0.55,
+    "vulnerability": 7,
+    "smoke_bonus": 0,
+    "hot_night": true,
+    "factors": [
+     {
+      "label": "age 76",
+      "points": 2
+     },
+     {
+      "label": "lives alone",
+      "points": 2
+     },
+     {
+      "label": "no AC",
+      "points": 2
+     },
+     {
+      "label": "cognitive impairment",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 8,
+   "client_id": "c08",
+   "name": "Grace L.",
+   "age": 62,
+   "lat": 53.51308,
+   "lon": -113.49058,
+   "neighbourhood": "Old Strathcona",
+   "score": 27.2,
+   "band": "red",
+   "forecast_band": "red",
+   "indoor_c": 32.7,
+   "hours_above_26": 17,
+   "hours_above_31": 3,
+   "escalated": true,
+   "reasons": [
+    "32.7°C, 3 h straight above 31°C",
+    "lives alone",
+    "no AC",
+    "COPD"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 58,
+   "breakdown": {
+    "exposure": 65.5,
+    "exposure_norm": 0.42,
+    "vulnerability": 6,
+    "smoke_bonus": 0,
+    "hot_night": false,
+    "factors": [
+     {
+      "label": "lives alone",
+      "points": 2
+     },
+     {
+      "label": "no AC",
+      "points": 2
+     },
+     {
+      "label": "COPD",
+      "points": 1
+     },
+     {
+      "label": "limited mobility",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 9,
+   "client_id": "c50",
+   "name": "Kenneth N.",
+   "age": 90,
+   "lat": 53.52044,
+   "lon": -113.49252,
+   "neighbourhood": "Old Strathcona",
+   "score": 47.2,
+   "band": "amber",
+   "forecast_band": "amber",
+   "indoor_c": 33.6,
+   "hours_above_26": 24,
+   "hours_above_31": 10,
+   "escalated": false,
+   "reasons": [
+    "33.6°C, 4 h straight above 31°C",
+    "no relief overnight",
+    "age 90",
+    "no AC"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 13,
+   "breakdown": {
+    "exposure": 132.5,
+    "exposure_norm": 0.67,
+    "vulnerability": 7,
+    "smoke_bonus": 0,
+    "hot_night": true,
+    "factors": [
+     {
+      "label": "age 90",
+      "points": 3
+     },
+     {
+      "label": "no AC",
+      "points": 2
+     },
+     {
+      "label": "diabetes",
+      "points": 1
+     },
+     {
+      "label": "limited mobility",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 10,
+   "client_id": "c12",
+   "name": "Clarence C.",
+   "age": 86,
+   "lat": 53.45253,
+   "lon": -113.41641,
+   "neighbourhood": "Mill Woods",
+   "score": 43.0,
+   "band": "amber",
+   "forecast_band": "amber",
+   "indoor_c": 33.0,
+   "hours_above_26": 24,
+   "hours_above_31": 6,
+   "escalated": false,
+   "reasons": [
+    "33.0°C, 4 h straight above 31°C",
+    "no relief overnight",
+    "age 86",
+    "no AC"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 18,
+   "breakdown": {
+    "exposure": 112.6,
+    "exposure_norm": 0.61,
+    "vulnerability": 7,
+    "smoke_bonus": 0,
+    "hot_night": true,
+    "factors": [
+     {
+      "label": "age 86",
+      "points": 3
+     },
+     {
+      "label": "no AC",
+      "points": 2
+     },
+     {
+      "label": "heart disease",
+      "points": 1
+     },
+     {
+      "label": "limited mobility",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 11,
+   "client_id": "c36",
+   "name": "Walter E.",
+   "age": 72,
+   "lat": 53.53664,
+   "lon": -113.48677,
+   "neighbourhood": "Downtown",
+   "score": 41.2,
+   "band": "amber",
+   "forecast_band": "amber",
+   "indoor_c": 33.9,
+   "hours_above_26": 24,
+   "hours_above_31": 9,
+   "escalated": false,
+   "reasons": [
+    "33.9°C, 4 h straight above 31°C",
+    "no relief overnight",
+    "age 72",
+    "no AC"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 44,
+   "breakdown": {
+    "exposure": 121.4,
+    "exposure_norm": 0.64,
+    "vulnerability": 6,
+    "smoke_bonus": 0,
+    "hot_night": true,
+    "factors": [
+     {
+      "label": "age 72",
+      "points": 2
+     },
+     {
+      "label": "no AC",
+      "points": 2
+     },
+     {
+      "label": "mental illness",
+      "points": 1
+     },
+     {
+      "label": "heart disease",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 12,
+   "client_id": "c10",
+   "name": "Frank T.",
+   "age": 98,
+   "lat": 53.59375,
+   "lon": -113.42452,
+   "neighbourhood": "Clareview",
+   "score": 40.2,
+   "band": "amber",
+   "forecast_band": "amber",
+   "indoor_c": 33.9,
+   "hours_above_26": 19,
+   "hours_above_31": 9,
+   "escalated": false,
+   "reasons": [
+    "33.9°C, 4 h straight above 31°C",
+    "age 98",
+    "no AC",
+    "heart disease"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 1,
+   "breakdown": {
+    "exposure": 101.1,
+    "exposure_norm": 0.57,
+    "vulnerability": 7,
+    "smoke_bonus": 0,
+    "hot_night": false,
+    "factors": [
+     {
+      "label": "age 98",
+      "points": 3
+     },
+     {
+      "label": "no AC",
+      "points": 2
+     },
+     {
+      "label": "heart disease",
+      "points": 1
+     },
+     {
+      "label": "limited mobility",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 13,
+   "client_id": "c03",
+   "name": "Walter K.",
+   "age": 77,
+   "lat": 53.5717,
+   "lon": -113.47802,
+   "neighbourhood": "Alberta Avenue",
+   "score": 39.2,
+   "band": "amber",
+   "forecast_band": "amber",
+   "indoor_c": 34.1,
+   "hours_above_26": 24,
+   "hours_above_31": 10,
+   "escalated": false,
+   "reasons": [
+    "34.1°C, 4 h straight above 31°C",
+    "no relief overnight",
+    "age 77",
+    "no AC"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 35,
+   "breakdown": {
+    "exposure": 132.0,
+    "exposure_norm": 0.67,
+    "vulnerability": 5,
+    "smoke_bonus": 0,
+    "hot_night": true,
+    "factors": [
+     {
+      "label": "age 77",
+      "points": 2
+     },
+     {
+      "label": "no AC",
+      "points": 2
+     },
+     {
+      "label": "COPD",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 14,
+   "client_id": "c51",
+   "name": "Maria T.",
+   "age": 86,
+   "lat": 53.53269,
+   "lon": -113.45128,
+   "neighbourhood": "Bonnie Doon",
+   "score": 35.2,
+   "band": "amber",
+   "forecast_band": "amber",
+   "indoor_c": 30.7,
+   "hours_above_26": 24,
+   "hours_above_31": 0,
+   "escalated": false,
+   "reasons": [
+    "30.7°C now · 24 h above 26°C",
+    "no relief overnight",
+    "age 86",
+    "lives alone"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 20,
+   "breakdown": {
+    "exposure": 61.1,
+    "exposure_norm": 0.4,
+    "vulnerability": 10,
+    "smoke_bonus": 0,
+    "hot_night": true,
+    "factors": [
+     {
+      "label": "age 86",
+      "points": 3
+     },
+     {
+      "label": "lives alone",
+      "points": 2
+     },
+     {
+      "label": "no AC",
+      "points": 2
+     },
+     {
+      "label": "mental illness",
+      "points": 1
+     },
+     {
+      "label": "kidney disease",
+      "points": 1
+     },
+     {
+      "label": "heart disease",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 15,
+   "client_id": "c07",
+   "name": "Pauline J.",
+   "age": 80,
+   "lat": 53.57368,
+   "lon": -113.49272,
+   "neighbourhood": "Alberta Avenue",
+   "score": 33.3,
+   "band": "amber",
+   "forecast_band": "amber",
+   "indoor_c": 31.1,
+   "hours_above_26": 20,
+   "hours_above_31": 1,
+   "escalated": false,
+   "reasons": [
+    "31.1°C now · 1 h above 31°C",
+    "no relief overnight",
+    "age 80",
+    "lives alone"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 33,
+   "breakdown": {
+    "exposure": 62.1,
+    "exposure_norm": 0.4,
+    "vulnerability": 9,
+    "smoke_bonus": 0,
+    "hot_night": true,
+    "factors": [
+     {
+      "label": "age 80",
+      "points": 2
+     },
+     {
+      "label": "lives alone",
+      "points": 2
+     },
+     {
+      "label": "no AC",
+      "points": 2
+     },
+     {
+      "label": "asthma",
+      "points": 1
+     },
+     {
+      "label": "Parkinson's",
+      "points": 1
+     },
+     {
+      "label": "limited mobility",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 16,
+   "client_id": "c05",
+   "name": "Olga V.",
+   "age": 73,
+   "lat": 53.56859,
+   "lon": -113.49317,
+   "neighbourhood": "Alberta Avenue",
+   "score": 32.9,
+   "band": "amber",
+   "forecast_band": "amber",
+   "indoor_c": 33.3,
+   "hours_above_26": 19,
+   "hours_above_31": 6,
+   "escalated": false,
+   "reasons": [
+    "33.3°C, 3 h straight above 31°C",
+    "age 73",
+    "no AC",
+    "diabetes"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 42,
+   "breakdown": {
+    "exposure": 85.1,
+    "exposure_norm": 0.51,
+    "vulnerability": 6,
+    "smoke_bonus": 0,
+    "hot_night": false,
+    "factors": [
+     {
+      "label": "age 73",
+      "points": 2
+     },
+     {
+      "label": "no AC",
+      "points": 2
+     },
+     {
+      "label": "diabetes",
+      "points": 1
+     },
+     {
+      "label": "limited mobility",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 17,
+   "client_id": "c31",
+   "name": "Bernice W.",
+   "age": 85,
+   "lat": 53.57077,
+   "lon": -113.48236,
+   "neighbourhood": "Alberta Avenue",
+   "score": 31.1,
+   "band": "amber",
+   "forecast_band": "amber",
+   "indoor_c": 30.9,
+   "hours_above_26": 19,
+   "hours_above_31": 0,
+   "escalated": false,
+   "reasons": [
+    "30.9°C now · 19 h above 26°C",
+    "no relief overnight",
+    "age 85",
+    "lives alone"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 22,
+   "breakdown": {
+    "exposure": 56.9,
+    "exposure_norm": 0.38,
+    "vulnerability": 9,
+    "smoke_bonus": 0,
+    "hot_night": true,
+    "factors": [
+     {
+      "label": "age 85",
+      "points": 3
+     },
+     {
+      "label": "lives alone",
+      "points": 2
+     },
+     {
+      "label": "no AC",
+      "points": 2
+     },
+     {
+      "label": "COPD",
+      "points": 1
+     },
+     {
+      "label": "mental illness",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 18,
+   "client_id": "c04",
+   "name": "Lucille P.",
+   "age": 73,
+   "lat": 53.53182,
+   "lon": -113.46463,
+   "neighbourhood": "Bonnie Doon",
+   "score": 30.9,
+   "band": "amber",
+   "forecast_band": "amber",
+   "indoor_c": 31.1,
+   "hours_above_26": 20,
+   "hours_above_31": 1,
+   "escalated": false,
+   "reasons": [
+    "31.1°C now · 1 h above 31°C",
+    "no relief overnight",
+    "age 73",
+    "lives alone"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 41,
+   "breakdown": {
+    "exposure": 62.1,
+    "exposure_norm": 0.4,
+    "vulnerability": 8,
+    "smoke_bonus": 0,
+    "hot_night": true,
+    "factors": [
+     {
+      "label": "age 73",
+      "points": 2
+     },
+     {
+      "label": "lives alone",
+      "points": 2
+     },
+     {
+      "label": "no AC",
+      "points": 2
+     },
+     {
+      "label": "COPD",
+      "points": 1
+     },
+     {
+      "label": "heart disease",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 19,
+   "client_id": "c25",
+   "name": "Sunita A.",
+   "age": 65,
+   "lat": 53.52972,
+   "lon": -113.52876,
+   "neighbourhood": "Garneau",
+   "score": 30.0,
+   "band": "amber",
+   "forecast_band": "amber",
+   "indoor_c": 33.3,
+   "hours_above_26": 24,
+   "hours_above_31": 10,
+   "escalated": false,
+   "reasons": [
+    "33.3°C, 4 h straight above 31°C",
+    "no relief overnight",
+    "no AC",
+    "limited mobility"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 53,
+   "breakdown": {
+    "exposure": 121.5,
+    "exposure_norm": 0.64,
+    "vulnerability": 3,
+    "smoke_bonus": 0,
+    "hot_night": true,
+    "factors": [
+     {
+      "label": "no AC",
+      "points": 2
+     },
+     {
+      "label": "limited mobility",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 20,
+   "client_id": "c20",
+   "name": "Stanley G.",
+   "age": 78,
+   "lat": 53.54298,
+   "lon": -113.50691,
+   "neighbourhood": "Oliver",
+   "score": 29.5,
+   "band": "amber",
+   "forecast_band": "amber",
+   "indoor_c": 32.2,
+   "hours_above_26": 17,
+   "hours_above_31": 2,
+   "escalated": false,
+   "reasons": [
+    "32.2°C now · 2 h above 31°C",
+    "age 78",
+    "no AC",
+    "heart disease"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 34,
+   "breakdown": {
+    "exposure": 58.5,
+    "exposure_norm": 0.39,
+    "vulnerability": 8,
+    "smoke_bonus": 0,
+    "hot_night": false,
+    "factors": [
+     {
+      "label": "age 78",
+      "points": 2
+     },
+     {
+      "label": "no AC",
+      "points": 2
+     },
+     {
+      "label": "heart disease",
+      "points": 1
+     },
+     {
+      "label": "diabetes",
+      "points": 1
+     },
+     {
+      "label": "COPD",
+      "points": 1
+     },
+     {
+      "label": "limited mobility",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 21,
+   "client_id": "c43",
+   "name": "Colette H.",
+   "age": 89,
+   "lat": 53.53853,
+   "lon": -113.5028,
+   "neighbourhood": "Downtown",
+   "score": 26.1,
+   "band": "amber",
+   "forecast_band": "amber",
+   "indoor_c": 31.1,
+   "hours_above_26": 20,
+   "hours_above_31": 1,
+   "escalated": false,
+   "reasons": [
+    "31.1°C now · 1 h above 31°C",
+    "no relief overnight",
+    "age 89",
+    "no AC"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 14,
+   "breakdown": {
+    "exposure": 62.1,
+    "exposure_norm": 0.4,
+    "vulnerability": 6,
+    "smoke_bonus": 0,
+    "hot_night": true,
+    "factors": [
+     {
+      "label": "age 89",
+      "points": 3
+     },
+     {
+      "label": "no AC",
+      "points": 2
+     },
+     {
+      "label": "kidney disease",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 22,
+   "client_id": "c34",
+   "name": "Ivan R.",
+   "age": 66,
+   "lat": 53.55249,
+   "lon": -113.49932,
+   "neighbourhood": "Downtown",
+   "score": 25.6,
+   "band": "amber",
+   "forecast_band": "amber",
+   "indoor_c": 31.2,
+   "hours_above_26": 22,
+   "hours_above_31": 1,
+   "escalated": false,
+   "reasons": [
+    "31.2°C now · 1 h above 31°C",
+    "no relief overnight",
+    "no AC",
+    "heart disease"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 50,
+   "breakdown": {
+    "exposure": 68.6,
+    "exposure_norm": 0.44,
+    "vulnerability": 5,
+    "smoke_bonus": 0,
+    "hot_night": true,
+    "factors": [
+     {
+      "label": "no AC",
+      "points": 2
+     },
+     {
+      "label": "heart disease",
+      "points": 1
+     },
+     {
+      "label": "diabetes",
+      "points": 1
+     },
+     {
+      "label": "cognitive impairment",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 23,
+   "client_id": "c19",
+   "name": "Irene C.",
+   "age": 65,
+   "lat": 53.55097,
+   "lon": -113.50511,
+   "neighbourhood": "Oliver",
+   "score": 23.2,
+   "band": "green",
+   "forecast_band": "amber",
+   "indoor_c": 31.7,
+   "hours_above_26": 24,
+   "hours_above_31": 2,
+   "escalated": false,
+   "reasons": [
+    "31.7°C now · 2 h above 31°C",
+    "no relief overnight",
+    "no AC",
+    "diabetes"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 52,
+   "breakdown": {
+    "exposure": 81.7,
+    "exposure_norm": 0.49,
+    "vulnerability": 3,
+    "smoke_bonus": 0,
+    "hot_night": true,
+    "factors": [
+     {
+      "label": "no AC",
+      "points": 2
+     },
+     {
+      "label": "diabetes",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 24,
+   "client_id": "c56",
+   "name": "Yusuf G.",
+   "age": 97,
+   "lat": 53.54774,
+   "lon": -113.48405,
+   "neighbourhood": "Downtown",
+   "score": 20.9,
+   "band": "green",
+   "forecast_band": "green",
+   "indoor_c": 30.2,
+   "hours_above_26": 18,
+   "hours_above_31": 0,
+   "escalated": false,
+   "reasons": [
+    "30.2°C now · 18 h above 26°C",
+    "age 97",
+    "no AC",
+    "mental illness"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 6,
+   "breakdown": {
+    "exposure": 38.3,
+    "exposure_norm": 0.27,
+    "vulnerability": 8,
+    "smoke_bonus": 0,
+    "hot_night": false,
+    "factors": [
+     {
+      "label": "age 97",
+      "points": 3
+     },
+     {
+      "label": "no AC",
+      "points": 2
+     },
+     {
+      "label": "mental illness",
+      "points": 1
+     },
+     {
+      "label": "asthma",
+      "points": 1
+     },
+     {
+      "label": "heart disease",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 25,
+   "client_id": "c45",
+   "name": "Gladys J.",
+   "age": 62,
+   "lat": 53.54862,
+   "lon": -113.488,
+   "neighbourhood": "Downtown",
+   "score": 18.2,
+   "band": "green",
+   "forecast_band": "green",
+   "indoor_c": 31.7,
+   "hours_above_26": 20,
+   "hours_above_31": 2,
+   "escalated": false,
+   "reasons": [
+    "31.7°C now · 2 h above 31°C",
+    "no relief overnight",
+    "no AC"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 59,
+   "breakdown": {
+    "exposure": 70.2,
+    "exposure_norm": 0.44,
+    "vulnerability": 2,
+    "smoke_bonus": 0,
+    "hot_night": true,
+    "factors": [
+     {
+      "label": "no AC",
+      "points": 2
+     }
+    ]
+   }
+  },
+  {
+   "rank": 26,
+   "client_id": "c18",
+   "name": "Cyril L.",
+   "age": 65,
+   "lat": 53.59172,
+   "lon": -113.4267,
+   "neighbourhood": "Clareview",
+   "score": 12.8,
+   "band": "green",
+   "forecast_band": "green",
+   "indoor_c": 30.2,
+   "hours_above_26": 18,
+   "hours_above_31": 0,
+   "escalated": false,
+   "reasons": [
+    "30.2°C now · 18 h above 26°C",
+    "no AC",
+    "diabetes"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 51,
+   "breakdown": {
+    "exposure": 38.3,
+    "exposure_norm": 0.27,
+    "vulnerability": 3,
+    "smoke_bonus": 0,
+    "hot_night": false,
+    "factors": [
+     {
+      "label": "no AC",
+      "points": 2
+     },
+     {
+      "label": "diabetes",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 27,
+   "client_id": "c16",
+   "name": "Roland B.",
+   "age": 85,
+   "lat": 53.54273,
+   "lon": -113.53259,
+   "neighbourhood": "Oliver",
+   "score": 0.0,
+   "band": "green",
+   "forecast_band": "green",
+   "indoor_c": 24.5,
+   "hours_above_26": 0,
+   "hours_above_31": 0,
+   "escalated": false,
+   "reasons": [
+    "age 85",
+    "lives alone",
+    "Parkinson's",
+    "heart disease"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 21,
+   "breakdown": {
+    "exposure": 0.0,
+    "exposure_norm": 0.0,
+    "vulnerability": 8,
+    "smoke_bonus": 0,
+    "hot_night": false,
+    "factors": [
+     {
+      "label": "age 85",
+      "points": 3
+     },
+     {
+      "label": "lives alone",
+      "points": 2
+     },
+     {
+      "label": "Parkinson's",
+      "points": 1
+     },
+     {
+      "label": "heart disease",
+      "points": 1
+     },
+     {
+      "label": "diabetes",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 28,
+   "client_id": "c30",
+   "name": "Tomasz H.",
+   "age": 90,
+   "lat": 53.45953,
+   "lon": -113.42048,
+   "neighbourhood": "Mill Woods",
+   "score": 0.0,
+   "band": "green",
+   "forecast_band": "green",
+   "indoor_c": 24.5,
+   "hours_above_26": 0,
+   "hours_above_31": 0,
+   "escalated": false,
+   "reasons": [
+    "age 90",
+    "lives alone",
+    "diabetes",
+    "COPD"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 12,
+   "breakdown": {
+    "exposure": 0.0,
+    "exposure_norm": 0.0,
+    "vulnerability": 8,
+    "smoke_bonus": 0,
+    "hot_night": false,
+    "factors": [
+     {
+      "label": "age 90",
+      "points": 3
+     },
+     {
+      "label": "lives alone",
+      "points": 2
+     },
+     {
+      "label": "diabetes",
+      "points": 1
+     },
+     {
+      "label": "COPD",
+      "points": 1
+     },
+     {
+      "label": "limited mobility",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 29,
+   "client_id": "c59",
+   "name": "Lorraine C.",
+   "age": 84,
+   "lat": 53.6031,
+   "lon": -113.41263,
+   "neighbourhood": "Clareview",
+   "score": 0.0,
+   "band": "green",
+   "forecast_band": "green",
+   "indoor_c": 24.5,
+   "hours_above_26": 0,
+   "hours_above_31": 0,
+   "escalated": false,
+   "reasons": [
+    "age 84",
+    "lives alone",
+    "heart disease",
+    "Parkinson's"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 26,
+   "breakdown": {
+    "exposure": 0.0,
+    "exposure_norm": 0.0,
+    "vulnerability": 8,
+    "smoke_bonus": 0,
+    "hot_night": false,
+    "factors": [
+     {
+      "label": "age 84",
+      "points": 2
+     },
+     {
+      "label": "lives alone",
+      "points": 2
+     },
+     {
+      "label": "heart disease",
+      "points": 1
+     },
+     {
+      "label": "Parkinson's",
+      "points": 1
+     },
+     {
+      "label": "diabetes",
+      "points": 1
+     },
+     {
+      "label": "limited mobility",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 30,
+   "client_id": "c02",
+   "name": "Gordon B.",
+   "age": 91,
+   "lat": 53.54278,
+   "lon": -113.494,
+   "neighbourhood": "Downtown",
+   "score": 0.0,
+   "band": "green",
+   "forecast_band": "green",
+   "indoor_c": 24.5,
+   "hours_above_26": 0,
+   "hours_above_31": 0,
+   "escalated": false,
+   "reasons": [
+    "age 91",
+    "lives alone",
+    "diabetes",
+    "limited mobility"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 10,
+   "breakdown": {
+    "exposure": 0.0,
+    "exposure_norm": 0.0,
+    "vulnerability": 7,
+    "smoke_bonus": 0,
+    "hot_night": false,
+    "factors": [
+     {
+      "label": "age 91",
+      "points": 3
+     },
+     {
+      "label": "lives alone",
+      "points": 2
+     },
+     {
+      "label": "diabetes",
+      "points": 1
+     },
+     {
+      "label": "limited mobility",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 31,
+   "client_id": "c14",
+   "name": "Wilfred W.",
+   "age": 73,
+   "lat": 53.53646,
+   "lon": -113.50301,
+   "neighbourhood": "Downtown",
+   "score": 0.0,
+   "band": "green",
+   "forecast_band": "green",
+   "indoor_c": 24.5,
+   "hours_above_26": 0,
+   "hours_above_31": 0,
+   "escalated": false,
+   "reasons": [
+    "age 73",
+    "lives alone",
+    "heart disease",
+    "kidney disease"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 43,
+   "breakdown": {
+    "exposure": 0.0,
+    "exposure_norm": 0.0,
+    "vulnerability": 7,
+    "smoke_bonus": 0,
+    "hot_night": false,
+    "factors": [
+     {
+      "label": "age 73",
+      "points": 2
+     },
+     {
+      "label": "lives alone",
+      "points": 2
+     },
+     {
+      "label": "heart disease",
+      "points": 1
+     },
+     {
+      "label": "kidney disease",
+      "points": 1
+     },
+     {
+      "label": "limited mobility",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 32,
+   "client_id": "c23",
+   "name": "Nadia S.",
+   "age": 98,
+   "lat": 53.55041,
+   "lon": -113.53024,
+   "neighbourhood": "Westmount",
+   "score": 0.0,
+   "band": "green",
+   "forecast_band": "green",
+   "indoor_c": 24.5,
+   "hours_above_26": 0,
+   "hours_above_31": 0,
+   "escalated": false,
+   "reasons": [
+    "age 98",
+    "lives alone",
+    "COPD",
+    "mental illness"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 2,
+   "breakdown": {
+    "exposure": 0.0,
+    "exposure_norm": 0.0,
+    "vulnerability": 7,
+    "smoke_bonus": 0,
+    "hot_night": false,
+    "factors": [
+     {
+      "label": "age 98",
+      "points": 3
+     },
+     {
+      "label": "lives alone",
+      "points": 2
+     },
+     {
+      "label": "COPD",
+      "points": 1
+     },
+     {
+      "label": "mental illness",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 33,
+   "client_id": "c44",
+   "name": "Harold R.",
+   "age": 77,
+   "lat": 53.4558,
+   "lon": -113.42587,
+   "neighbourhood": "Mill Woods",
+   "score": 0.0,
+   "band": "green",
+   "forecast_band": "green",
+   "indoor_c": 24.5,
+   "hours_above_26": 0,
+   "hours_above_31": 0,
+   "escalated": false,
+   "reasons": [
+    "age 77",
+    "lives alone",
+    "heart disease",
+    "COPD"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 36,
+   "breakdown": {
+    "exposure": 0.0,
+    "exposure_norm": 0.0,
+    "vulnerability": 7,
+    "smoke_bonus": 0,
+    "hot_night": false,
+    "factors": [
+     {
+      "label": "age 77",
+      "points": 2
+     },
+     {
+      "label": "lives alone",
+      "points": 2
+     },
+     {
+      "label": "heart disease",
+      "points": 1
+     },
+     {
+      "label": "COPD",
+      "points": 1
+     },
+     {
+      "label": "limited mobility",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 34,
+   "client_id": "c47",
+   "name": "Rosa Y.",
+   "age": 92,
+   "lat": 53.54931,
+   "lon": -113.48068,
+   "neighbourhood": "Downtown",
+   "score": 0.0,
+   "band": "green",
+   "forecast_band": "green",
+   "indoor_c": 24.5,
+   "hours_above_26": 0,
+   "hours_above_31": 0,
+   "escalated": false,
+   "reasons": [
+    "age 92",
+    "lives alone",
+    "diabetes",
+    "COPD"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 9,
+   "breakdown": {
+    "exposure": 0.0,
+    "exposure_norm": 0.0,
+    "vulnerability": 7,
+    "smoke_bonus": 0,
+    "hot_night": false,
+    "factors": [
+     {
+      "label": "age 92",
+      "points": 3
+     },
+     {
+      "label": "lives alone",
+      "points": 2
+     },
+     {
+      "label": "diabetes",
+      "points": 1
+     },
+     {
+      "label": "COPD",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 35,
+   "client_id": "c27",
+   "name": "Evelyn Y.",
+   "age": 98,
+   "lat": 53.54685,
+   "lon": -113.53575,
+   "neighbourhood": "Westmount",
+   "score": 0.0,
+   "band": "green",
+   "forecast_band": "green",
+   "indoor_c": 24.5,
+   "hours_above_26": 0,
+   "hours_above_31": 0,
+   "escalated": false,
+   "reasons": [
+    "age 98",
+    "lives alone",
+    "limited mobility"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 3,
+   "breakdown": {
+    "exposure": 0.0,
+    "exposure_norm": 0.0,
+    "vulnerability": 6,
+    "smoke_bonus": 0,
+    "hot_night": false,
+    "factors": [
+     {
+      "label": "age 98",
+      "points": 3
+     },
+     {
+      "label": "lives alone",
+      "points": 2
+     },
+     {
+      "label": "limited mobility",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 36,
+   "client_id": "c33",
+   "name": "Beatrice J.",
+   "age": 85,
+   "lat": 53.56768,
+   "lon": -113.39483,
+   "neighbourhood": "Beverly",
+   "score": 0.0,
+   "band": "green",
+   "forecast_band": "green",
+   "indoor_c": 24.5,
+   "hours_above_26": 0,
+   "hours_above_31": 0,
+   "escalated": false,
+   "reasons": [
+    "age 85",
+    "lives alone",
+    "mental illness"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 23,
+   "breakdown": {
+    "exposure": 0.0,
+    "exposure_norm": 0.0,
+    "vulnerability": 6,
+    "smoke_bonus": 0,
+    "hot_night": false,
+    "factors": [
+     {
+      "label": "age 85",
+      "points": 3
+     },
+     {
+      "label": "lives alone",
+      "points": 2
+     },
+     {
+      "label": "mental illness",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 37,
+   "client_id": "c37",
+   "name": "Agnes W.",
+   "age": 75,
+   "lat": 53.57416,
+   "lon": -113.48648,
+   "neighbourhood": "Alberta Avenue",
+   "score": 0.0,
+   "band": "green",
+   "forecast_band": "green",
+   "indoor_c": 24.5,
+   "hours_above_26": 0,
+   "hours_above_31": 0,
+   "escalated": false,
+   "reasons": [
+    "age 75",
+    "lives alone",
+    "heart disease",
+    "Parkinson's"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 39,
+   "breakdown": {
+    "exposure": 0.0,
+    "exposure_norm": 0.0,
+    "vulnerability": 6,
+    "smoke_bonus": 0,
+    "hot_night": false,
+    "factors": [
+     {
+      "label": "age 75",
+      "points": 2
+     },
+     {
+      "label": "lives alone",
+      "points": 2
+     },
+     {
+      "label": "heart disease",
+      "points": 1
+     },
+     {
+      "label": "Parkinson's",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 38,
+   "client_id": "c41",
+   "name": "Shirley N.",
+   "age": 71,
+   "lat": 53.54333,
+   "lon": -113.49974,
+   "neighbourhood": "Downtown",
+   "score": 0.0,
+   "band": "green",
+   "forecast_band": "green",
+   "indoor_c": 24.5,
+   "hours_above_26": 0,
+   "hours_above_31": 0,
+   "escalated": false,
+   "reasons": [
+    "age 71",
+    "lives alone",
+    "Parkinson's",
+    "limited mobility"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 48,
+   "breakdown": {
+    "exposure": 0.0,
+    "exposure_norm": 0.0,
+    "vulnerability": 6,
+    "smoke_bonus": 0,
+    "hot_night": false,
+    "factors": [
+     {
+      "label": "age 71",
+      "points": 2
+     },
+     {
+      "label": "lives alone",
+      "points": 2
+     },
+     {
+      "label": "Parkinson's",
+      "points": 1
+     },
+     {
+      "label": "limited mobility",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 39,
+   "client_id": "c49",
+   "name": "Ingrid C.",
+   "age": 97,
+   "lat": 53.57168,
+   "lon": -113.39078,
+   "neighbourhood": "Beverly",
+   "score": 0.0,
+   "band": "green",
+   "forecast_band": "green",
+   "indoor_c": 24.5,
+   "hours_above_26": 0,
+   "hours_above_31": 0,
+   "escalated": false,
+   "reasons": [
+    "age 97",
+    "lives alone",
+    "COPD"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 5,
+   "breakdown": {
+    "exposure": 0.0,
+    "exposure_norm": 0.0,
+    "vulnerability": 6,
+    "smoke_bonus": 0,
+    "hot_night": false,
+    "factors": [
+     {
+      "label": "age 97",
+      "points": 3
+     },
+     {
+      "label": "lives alone",
+      "points": 2
+     },
+     {
+      "label": "COPD",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 40,
+   "client_id": "c58",
+   "name": "Viktor H.",
+   "age": 83,
+   "lat": 53.46084,
+   "lon": -113.43051,
+   "neighbourhood": "Mill Woods",
+   "score": 0.0,
+   "band": "green",
+   "forecast_band": "green",
+   "indoor_c": 24.5,
+   "hours_above_26": 0,
+   "hours_above_31": 0,
+   "escalated": false,
+   "reasons": [
+    "age 83",
+    "lives alone",
+    "COPD",
+    "heart disease"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 28,
+   "breakdown": {
+    "exposure": 0.0,
+    "exposure_norm": 0.0,
+    "vulnerability": 6,
+    "smoke_bonus": 0,
+    "hot_night": false,
+    "factors": [
+     {
+      "label": "age 83",
+      "points": 2
+     },
+     {
+      "label": "lives alone",
+      "points": 2
+     },
+     {
+      "label": "COPD",
+      "points": 1
+     },
+     {
+      "label": "heart disease",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 41,
+   "client_id": "c11",
+   "name": "Mildred K.",
+   "age": 90,
+   "lat": 53.55083,
+   "lon": -113.5363,
+   "neighbourhood": "Westmount",
+   "score": 0.0,
+   "band": "green",
+   "forecast_band": "green",
+   "indoor_c": 24.5,
+   "hours_above_26": 0,
+   "hours_above_31": 0,
+   "escalated": false,
+   "reasons": [
+    "age 90",
+    "COPD",
+    "diabetes"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 11,
+   "breakdown": {
+    "exposure": 0.0,
+    "exposure_norm": 0.0,
+    "vulnerability": 5,
+    "smoke_bonus": 0,
+    "hot_night": false,
+    "factors": [
+     {
+      "label": "age 90",
+      "points": 3
+     },
+     {
+      "label": "COPD",
+      "points": 1
+     },
+     {
+      "label": "diabetes",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 42,
+   "client_id": "c13",
+   "name": "Amara R.",
+   "age": 71,
+   "lat": 53.55972,
+   "lon": -113.52785,
+   "neighbourhood": "Westmount",
+   "score": 0.0,
+   "band": "green",
+   "forecast_band": "green",
+   "indoor_c": 24.5,
+   "hours_above_26": 0,
+   "hours_above_31": 0,
+   "escalated": false,
+   "reasons": [
+    "age 71",
+    "lives alone",
+    "COPD"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 45,
+   "breakdown": {
+    "exposure": 0.0,
+    "exposure_norm": 0.0,
+    "vulnerability": 5,
+    "smoke_bonus": 0,
+    "hot_night": false,
+    "factors": [
+     {
+      "label": "age 71",
+      "points": 2
+     },
+     {
+      "label": "lives alone",
+      "points": 2
+     },
+     {
+      "label": "COPD",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 43,
+   "client_id": "c21",
+   "name": "Mei P.",
+   "age": 86,
+   "lat": 53.45988,
+   "lon": -113.42616,
+   "neighbourhood": "Mill Woods",
+   "score": 0.0,
+   "band": "green",
+   "forecast_band": "green",
+   "indoor_c": 24.5,
+   "hours_above_26": 0,
+   "hours_above_31": 0,
+   "escalated": false,
+   "reasons": [
+    "age 86",
+    "limited mobility",
+    "cognitive impairment"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 19,
+   "breakdown": {
+    "exposure": 0.0,
+    "exposure_norm": 0.0,
+    "vulnerability": 5,
+    "smoke_bonus": 0,
+    "hot_night": false,
+    "factors": [
+     {
+      "label": "age 86",
+      "points": 3
+     },
+     {
+      "label": "limited mobility",
+      "points": 1
+     },
+     {
+      "label": "cognitive impairment",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 44,
+   "client_id": "c22",
+   "name": "Gurpreet Y.",
+   "age": 88,
+   "lat": 53.54095,
+   "lon": -113.47973,
+   "neighbourhood": "Downtown",
+   "score": 0.0,
+   "band": "green",
+   "forecast_band": "green",
+   "indoor_c": 24.5,
+   "hours_above_26": 0,
+   "hours_above_31": 0,
+   "escalated": false,
+   "reasons": [
+    "age 88",
+    "heart disease",
+    "mental illness"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 15,
+   "breakdown": {
+    "exposure": 0.0,
+    "exposure_norm": 0.0,
+    "vulnerability": 5,
+    "smoke_bonus": 0,
+    "hot_night": false,
+    "factors": [
+     {
+      "label": "age 88",
+      "points": 3
+     },
+     {
+      "label": "heart disease",
+      "points": 1
+     },
+     {
+      "label": "mental illness",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 45,
+   "client_id": "c38",
+   "name": "Leonard R.",
+   "age": 71,
+   "lat": 53.5703,
+   "lon": -113.48865,
+   "neighbourhood": "Alberta Avenue",
+   "score": 0.0,
+   "band": "green",
+   "forecast_band": "green",
+   "indoor_c": 24.5,
+   "hours_above_26": 0,
+   "hours_above_31": 0,
+   "escalated": false,
+   "reasons": [
+    "age 71",
+    "diabetes",
+    "mental illness",
+    "limited mobility"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 46,
+   "breakdown": {
+    "exposure": 0.0,
+    "exposure_norm": 0.0,
+    "vulnerability": 5,
+    "smoke_bonus": 0,
+    "hot_night": false,
+    "factors": [
+     {
+      "label": "age 71",
+      "points": 2
+     },
+     {
+      "label": "diabetes",
+      "points": 1
+     },
+     {
+      "label": "mental illness",
+      "points": 1
+     },
+     {
+      "label": "limited mobility",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 46,
+   "client_id": "c52",
+   "name": "Bao V.",
+   "age": 95,
+   "lat": 53.46346,
+   "lon": -113.4419,
+   "neighbourhood": "Mill Woods",
+   "score": 0.0,
+   "band": "green",
+   "forecast_band": "green",
+   "indoor_c": 24.5,
+   "hours_above_26": 0,
+   "hours_above_31": 0,
+   "escalated": false,
+   "reasons": [
+    "age 95",
+    "kidney disease",
+    "cognitive impairment"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 7,
+   "breakdown": {
+    "exposure": 0.0,
+    "exposure_norm": 0.0,
+    "vulnerability": 5,
+    "smoke_bonus": 0,
+    "hot_night": false,
+    "factors": [
+     {
+      "label": "age 95",
+      "points": 3
+     },
+     {
+      "label": "kidney disease",
+      "points": 1
+     },
+     {
+      "label": "cognitive impairment",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 47,
+   "client_id": "c17",
+   "name": "Fatima T.",
+   "age": 64,
+   "lat": 53.51734,
+   "lon": -113.50488,
+   "neighbourhood": "Garneau",
+   "score": 0.0,
+   "band": "green",
+   "forecast_band": "green",
+   "indoor_c": 24.5,
+   "hours_above_26": 0,
+   "hours_above_31": 0,
+   "escalated": false,
+   "reasons": [
+    "lives alone",
+    "heart disease",
+    "COPD"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 54,
+   "breakdown": {
+    "exposure": 0.0,
+    "exposure_norm": 0.0,
+    "vulnerability": 4,
+    "smoke_bonus": 0,
+    "hot_night": false,
+    "factors": [
+     {
+      "label": "lives alone",
+      "points": 2
+     },
+     {
+      "label": "heart disease",
+      "points": 1
+     },
+     {
+      "label": "COPD",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 48,
+   "client_id": "c39",
+   "name": "Lien G.",
+   "age": 71,
+   "lat": 53.55643,
+   "lon": -113.53974,
+   "neighbourhood": "Westmount",
+   "score": 0.0,
+   "band": "green",
+   "forecast_band": "green",
+   "indoor_c": 24.5,
+   "hours_above_26": 0,
+   "hours_above_31": 0,
+   "escalated": false,
+   "reasons": [
+    "age 71",
+    "COPD",
+    "limited mobility"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 47,
+   "breakdown": {
+    "exposure": 0.0,
+    "exposure_norm": 0.0,
+    "vulnerability": 4,
+    "smoke_bonus": 0,
+    "hot_night": false,
+    "factors": [
+     {
+      "label": "age 71",
+      "points": 2
+     },
+     {
+      "label": "COPD",
+      "points": 1
+     },
+     {
+      "label": "limited mobility",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 49,
+   "client_id": "c48",
+   "name": "Hiroshi P.",
+   "age": 98,
+   "lat": 53.55434,
+   "lon": -113.52662,
+   "neighbourhood": "Westmount",
+   "score": 0.0,
+   "band": "green",
+   "forecast_band": "green",
+   "indoor_c": 24.5,
+   "hours_above_26": 0,
+   "hours_above_31": 0,
+   "escalated": false,
+   "reasons": [
+    "age 98",
+    "limited mobility"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 4,
+   "breakdown": {
+    "exposure": 0.0,
+    "exposure_norm": 0.0,
+    "vulnerability": 4,
+    "smoke_bonus": 0,
+    "hot_night": false,
+    "factors": [
+     {
+      "label": "age 98",
+      "points": 3
+     },
+     {
+      "label": "limited mobility",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 50,
+   "client_id": "c53",
+   "name": "Ruth A.",
+   "age": 62,
+   "lat": 53.54644,
+   "lon": -113.52085,
+   "neighbourhood": "Oliver",
+   "score": 0.0,
+   "band": "green",
+   "forecast_band": "green",
+   "indoor_c": 24.5,
+   "hours_above_26": 0,
+   "hours_above_31": 0,
+   "escalated": false,
+   "reasons": [
+    "lives alone",
+    "kidney disease",
+    "heart disease"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 60,
+   "breakdown": {
+    "exposure": 0.0,
+    "exposure_norm": 0.0,
+    "vulnerability": 4,
+    "smoke_bonus": 0,
+    "hot_night": false,
+    "factors": [
+     {
+      "label": "lives alone",
+      "points": 2
+     },
+     {
+      "label": "kidney disease",
+      "points": 1
+     },
+     {
+      "label": "heart disease",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 51,
+   "client_id": "c09",
+   "name": "Anneliese V.",
+   "age": 81,
+   "lat": 53.59999,
+   "lon": -113.40423,
+   "neighbourhood": "Clareview",
+   "score": 0.0,
+   "band": "green",
+   "forecast_band": "green",
+   "indoor_c": 24.5,
+   "hours_above_26": 0,
+   "hours_above_31": 0,
+   "escalated": false,
+   "reasons": [
+    "age 81",
+    "COPD"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 30,
+   "breakdown": {
+    "exposure": 0.0,
+    "exposure_norm": 0.0,
+    "vulnerability": 3,
+    "smoke_bonus": 0,
+    "hot_night": false,
+    "factors": [
+     {
+      "label": "age 81",
+      "points": 2
+     },
+     {
+      "label": "COPD",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 52,
+   "client_id": "c24",
+   "name": "Douglas A.",
+   "age": 63,
+   "lat": 53.46156,
+   "lon": -113.41693,
+   "neighbourhood": "Mill Woods",
+   "score": 0.0,
+   "band": "green",
+   "forecast_band": "green",
+   "indoor_c": 24.5,
+   "hours_above_26": 0,
+   "hours_above_31": 0,
+   "escalated": false,
+   "reasons": [
+    "diabetes",
+    "limited mobility",
+    "cognitive impairment"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 57,
+   "breakdown": {
+    "exposure": 0.0,
+    "exposure_norm": 0.0,
+    "vulnerability": 3,
+    "smoke_bonus": 0,
+    "hot_night": false,
+    "factors": [
+     {
+      "label": "diabetes",
+      "points": 1
+     },
+     {
+      "label": "limited mobility",
+      "points": 1
+     },
+     {
+      "label": "cognitive impairment",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 53,
+   "client_id": "c35",
+   "name": "Josephine H.",
+   "age": 81,
+   "lat": 53.53672,
+   "lon": -113.45788,
+   "neighbourhood": "Bonnie Doon",
+   "score": 0.0,
+   "band": "green",
+   "forecast_band": "green",
+   "indoor_c": 24.5,
+   "hours_above_26": 0,
+   "hours_above_31": 0,
+   "escalated": false,
+   "reasons": [
+    "age 81",
+    "kidney disease"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 31,
+   "breakdown": {
+    "exposure": 0.0,
+    "exposure_norm": 0.0,
+    "vulnerability": 3,
+    "smoke_bonus": 0,
+    "hot_night": false,
+    "factors": [
+     {
+      "label": "age 81",
+      "points": 2
+     },
+     {
+      "label": "kidney disease",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 54,
+   "client_id": "c40",
+   "name": "Joseph E.",
+   "age": 70,
+   "lat": 53.62099,
+   "lon": -113.52571,
+   "neighbourhood": "Castle Downs",
+   "score": 0.0,
+   "band": "green",
+   "forecast_band": "green",
+   "indoor_c": 24.5,
+   "hours_above_26": 0,
+   "hours_above_31": 0,
+   "escalated": false,
+   "reasons": [
+    "age 70",
+    "limited mobility"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 49,
+   "breakdown": {
+    "exposure": 0.0,
+    "exposure_norm": 0.0,
+    "vulnerability": 3,
+    "smoke_bonus": 0,
+    "hot_night": false,
+    "factors": [
+     {
+      "label": "age 70",
+      "points": 2
+     },
+     {
+      "label": "limited mobility",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 55,
+   "client_id": "c42",
+   "name": "Emile K.",
+   "age": 74,
+   "lat": 53.51949,
+   "lon": -113.51531,
+   "neighbourhood": "Garneau",
+   "score": 0.0,
+   "band": "green",
+   "forecast_band": "green",
+   "indoor_c": 24.5,
+   "hours_above_26": 0,
+   "hours_above_31": 0,
+   "escalated": false,
+   "reasons": [
+    "age 74",
+    "diabetes"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 40,
+   "breakdown": {
+    "exposure": 0.0,
+    "exposure_norm": 0.0,
+    "vulnerability": 3,
+    "smoke_bonus": 0,
+    "hot_night": false,
+    "factors": [
+     {
+      "label": "age 74",
+      "points": 2
+     },
+     {
+      "label": "diabetes",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 56,
+   "client_id": "c46",
+   "name": "Lloyd L.",
+   "age": 81,
+   "lat": 53.61485,
+   "lon": -113.53145,
+   "neighbourhood": "Castle Downs",
+   "score": 0.0,
+   "band": "green",
+   "forecast_band": "green",
+   "indoor_c": 24.5,
+   "hours_above_26": 0,
+   "hours_above_31": 0,
+   "escalated": false,
+   "reasons": [
+    "age 81",
+    "COPD"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 32,
+   "breakdown": {
+    "exposure": 0.0,
+    "exposure_norm": 0.0,
+    "vulnerability": 3,
+    "smoke_bonus": 0,
+    "hot_night": false,
+    "factors": [
+     {
+      "label": "age 81",
+      "points": 2
+     },
+     {
+      "label": "COPD",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 57,
+   "client_id": "c57",
+   "name": "Marguerite P.",
+   "age": 87,
+   "lat": 53.55093,
+   "lon": -113.53277,
+   "neighbourhood": "Westmount",
+   "score": 0.0,
+   "band": "green",
+   "forecast_band": "green",
+   "indoor_c": 24.5,
+   "hours_above_26": 0,
+   "hours_above_31": 0,
+   "escalated": false,
+   "reasons": [
+    "age 87"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 16,
+   "breakdown": {
+    "exposure": 0.0,
+    "exposure_norm": 0.0,
+    "vulnerability": 3,
+    "smoke_bonus": 0,
+    "hot_night": false,
+    "factors": [
+     {
+      "label": "age 87",
+      "points": 3
+     }
+    ]
+   }
+  },
+  {
+   "rank": 58,
+   "client_id": "c60",
+   "name": "Rajinder W.",
+   "age": 84,
+   "lat": 53.52423,
+   "lon": -113.45895,
+   "neighbourhood": "Bonnie Doon",
+   "score": 0.0,
+   "band": "green",
+   "forecast_band": "green",
+   "indoor_c": 24.5,
+   "hours_above_26": 0,
+   "hours_above_31": 0,
+   "escalated": false,
+   "reasons": [
+    "age 84",
+    "kidney disease"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 27,
+   "breakdown": {
+    "exposure": 0.0,
+    "exposure_norm": 0.0,
+    "vulnerability": 3,
+    "smoke_bonus": 0,
+    "hot_night": false,
+    "factors": [
+     {
+      "label": "age 84",
+      "points": 2
+     },
+     {
+      "label": "kidney disease",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 59,
+   "client_id": "c28",
+   "name": "Albert H.",
+   "age": 64,
+   "lat": 53.60483,
+   "lon": -113.41625,
+   "neighbourhood": "Clareview",
+   "score": 0.0,
+   "band": "green",
+   "forecast_band": "green",
+   "indoor_c": 24.5,
+   "hours_above_26": 0,
+   "hours_above_31": 0,
+   "escalated": false,
+   "reasons": [
+    "kidney disease",
+    "cognitive impairment"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 55,
+   "breakdown": {
+    "exposure": 0.0,
+    "exposure_norm": 0.0,
+    "vulnerability": 2,
+    "smoke_bonus": 0,
+    "hot_night": false,
+    "factors": [
+     {
+      "label": "kidney disease",
+      "points": 1
+     },
+     {
+      "label": "cognitive impairment",
+      "points": 1
+     }
+    ]
+   }
+  },
+  {
+   "rank": 60,
+   "client_id": "c29",
+   "name": "Doris V.",
+   "age": 82,
+   "lat": 53.56749,
+   "lon": -113.38025,
+   "neighbourhood": "Beverly",
+   "score": 0.0,
+   "band": "green",
+   "forecast_band": "green",
+   "indoor_c": 24.5,
+   "hours_above_26": 0,
+   "hours_above_31": 0,
+   "escalated": false,
+   "reasons": [
+    "age 82"
+   ],
+   "status": "needs_visit",
+   "last_visit": null,
+   "phone_list_rank": 29,
+   "breakdown": {
+    "exposure": 0.0,
+    "exposure_norm": 0.0,
+    "vulnerability": 2,
+    "smoke_bonus": 0,
+    "hot_night": false,
+    "factors": [
+     {
+      "label": "age 82",
+      "points": 2
+     }
+    ]
+   }
+  }
+ ]
+}
