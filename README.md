@@ -6,6 +6,8 @@ natHacks 2026 · Standard Division · Healthcare & Accessibility
 
 **Live demo:** _add the Render URL here after the first deploy_ · **Written summary:** [docs/summary.md](docs/summary.md) · **Pitch script:** [docs/pitch.md](docs/pitch.md)
 
+![HeatRoute: Edmonton, July 17 2024, 18:00. Margaret ranked #1 with routes for three workers](docs/screenshot.jpg)
+
 ---
 
 ## The problem
