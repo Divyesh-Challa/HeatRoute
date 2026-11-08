@@ -50,11 +50,12 @@ button, input, select { font: inherit; color: inherit; }
 
 /* ---------- Shell ---------- */
 .app {
-  display: grid;
-  grid-template-rows: auto auto auto 1fr;
+  display: flex;
+  flex-direction: column;
   height: 100vh;
   min-height: 640px;
 }
+.app > .main { flex: 1; }
 .topbar {
   display: flex;
   align-items: center;
@@ -66,6 +67,41 @@ button, input, select { font: inherit; color: inherit; }
 .wordmark img { width: 24px; height: 24px; }
 .topbar .spacer { flex: 1; }
 .tagline { font-size: 14px; }
+@media (max-width: 1500px) { .tagline { display: none; } }
+.display-toggles { display: inline-flex; gap: 6px; }
+.btn.toggle { display: inline-flex; align-items: center; gap: 6px; padding: 0 10px; }
+.btn.toggle[aria-pressed="true"] { background: var(--primary); border-color: var(--primary); color: #fff; }
+.aa { font-weight: 700; font-size: 12px; line-height: 1; }
+.aa span { font-size: 16px; }
+@media (max-width: 1320px) { .toggle-label { display: none; } }
+
+/* ---------- Guided demo ---------- */
+.tour {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 8px 24px;
+  margin: 0 var(--pad) 10px;
+  padding: 12px 16px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: var(--radius-card);
+}
+.tour h2 { margin: 0; font-size: 16px; font-weight: 500; }
+.tour p { margin: 2px 0 0; font-size: 15px; color: #e4e4e4; max-width: 90ch; }
+.tour-progress { display: flex; gap: 6px; }
+.tour-progress button {
+  width: 10px; height: 10px; padding: 0; border-radius: 50%;
+  border: 1.5px solid #9a9a9a; background: transparent; cursor: pointer;
+}
+.tour-progress button.done { background: #9a9a9a; }
+.tour-progress button.on { background: #fff; border-color: #fff; transform: scale(1.25); }
+.tour-actions { display: flex; gap: 8px; }
+.btn.inverse { background: #fff; color: var(--primary); border-color: #fff; min-width: 84px; }
+.btn.inverse:hover { background: #e6e6e6; }
+.btn.ghost { background: transparent; color: #fff; border-color: #5a5a5a; }
+.btn.ghost:hover { background: #2a2a2a; }
+.tour :focus-visible { outline-color: #fff; }
 .topbar label { font-size: var(--fs-small); color: var(--muted); }
 
 .btn {
@@ -171,7 +207,7 @@ select.select {
   flex-direction: column;
 }
 .panel-head {
-  display: flex; align-items: baseline; justify-content: space-between; gap: 12px;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
   padding: 14px 16px 10px;
   border-bottom: 1px solid var(--rule);
 }
@@ -180,6 +216,21 @@ select.select {
 
 /* Ranked list */
 .list { overflow-y: auto; flex: 1; margin: 0; padding: 0; list-style: none; }
+.list-note { margin: 0; padding: 8px 16px; font-size: 14px; border-bottom: 1px solid var(--rule); }
+.list-note strong { font-weight: 700; color: var(--pill-red-ink); }
+.list li.dim .row { opacity: 0.45; padding-top: 6px; padding-bottom: 6px; }
+.list li.dim .indoor .val { font-size: 15px; }
+.list li.flag .row { box-shadow: inset 4px 0 0 var(--red); background: #fffafa; }
+.call-line { display: flex; align-items: center; gap: 10px; padding: 6px 16px; font-size: 13px; font-weight: 500; color: var(--pill-red-ink); }
+.call-line::before, .call-line::after { content: ""; flex: 1; border-top: 2px dashed var(--red); }
+.list li.dim .row:hover, .list li.dim .row:focus-visible { opacity: 1; }
+.hood { font-size: 13px; }
+.segmented { display: inline-flex; padding: 2px; background: var(--raised); border-radius: var(--radius-control); }
+.segmented button {
+  border: 0; background: transparent; padding: 4px 10px; border-radius: 4px;
+  font-size: 13px; font-weight: 500; color: var(--muted); cursor: pointer;
+}
+.segmented button[aria-pressed="true"] { background: var(--surface); color: var(--text); outline: 1px solid var(--border); }
 .row {
   display: grid;
   grid-template-columns: 34px 1fr auto;
@@ -299,6 +350,8 @@ table.factors td.num { text-align: right; }
 /* ---------- Narrow screens ---------- */
 @media (max-width: 1100px) {
   .app { height: auto; }
+  .topbar { flex-wrap: wrap; height: auto; padding-top: 10px; padding-bottom: 10px; row-gap: 8px; }
+  .topbar .spacer { flex-basis: 0; }
   .tagline { display: none; }
   .day-odd { display: none; }
   .main { grid-template-columns: 1fr; }
@@ -315,6 +368,7 @@ table.factors td.num { text-align: right; }
   .counts div { padding: 6px 10px; min-width: 0; flex: 1; }
   .counts dd { font-size: 22px; }
   .timeline { grid-template-columns: 1fr; }
+  .tour { grid-template-columns: 1fr; }
   .readout { text-align: left; }
   select.select { max-width: 100%; }
 }
@@ -322,9 +376,61 @@ table.factors td.num { text-align: right; }
 /* ---------- Print: the route sheet only ---------- */
 @media print {
   body { background: #fff; }
-  .topbar, .timeline, .titlerow .notices, .counts, .ranked, .mapwrap, .dispatch-controls, .drawer, .no-print { display: none !important; }
+  .topbar, .tour, .timeline, .titlerow .notices, .counts, .ranked, .mapwrap, .dispatch-controls, .drawer, .no-print { display: none !important; }
   .app, .main, .right { display: block; height: auto; }
   .dispatch { max-height: none; border: 0; }
   .routes { display: block; overflow: visible; }
   .route { break-inside: avoid; margin-bottom: 16px; }
+}
+
+/* ---------- Display preferences ---------- */
+/* Larger text scales the reading surfaces, not the map, so Leaflet's hit-testing stays exact. */
+:root[data-text="large"] .topbar,
+:root[data-text="large"] .tour,
+:root[data-text="large"] .titlerow,
+:root[data-text="large"] .timeline,
+:root[data-text="large"] .ranked,
+:root[data-text="large"] .dispatch,
+:root[data-text="large"] .drawer { zoom: 1.18; }
+:root[data-text="large"] .main { grid-template-columns: minmax(440px, 46%) 1fr; }
+
+:root[data-contrast="high"] {
+  --ground: #ffffff;
+  --border: #6b6b6b;
+  --rule: #b5b5b5;
+  --control: #4a4a4a;
+  --muted: #2b2b2b;
+  --text: #000000;
+  --red: #a3141a;
+  --amber: #8a4500;
+  --green: #1b5e20;
+  --pill-red-bg: #a3141a; --pill-red-ink: #ffffff;
+  --pill-amber-bg: #8a4500; --pill-amber-ink: #ffffff;
+  --pill-green-bg: #1b5e20; --pill-green-ink: #ffffff;
+  --pill-neutral-bg: #3d3d3d; --pill-neutral-ink: #ffffff;
+  --smoke: #cdbfa6;
+}
+:root[data-contrast="high"] .reasons { color: #000; }
+:root[data-contrast="high"] .forecast { color: #a3141a; }
+:root[data-contrast="high"] .list li.dim .row { opacity: 0.6; }
+:root[data-contrast="high"] .list-note strong { color: #a3141a; }
+:root[data-contrast="high"] .notice.heat { background: #a3141a; color: #fff; }
+:root[data-contrast="high"] :focus-visible { outline: 4px solid #000; outline-offset: 2px; }
+:root[data-contrast="high"] .tour :focus-visible { outline-color: #fff; }
+:root[data-contrast="high"] .mapwrap .leaflet-tile-pane { filter: grayscale(1) contrast(1.15); }
+/* Below 1100px panels are full width, where zoom would overflow; enlarge the type instead. */
+@media (max-width: 1100px) {
+  :root[data-text="large"] .topbar,
+  :root[data-text="large"] .tour,
+  :root[data-text="large"] .titlerow,
+  :root[data-text="large"] .timeline,
+  :root[data-text="large"] .ranked,
+  :root[data-text="large"] .dispatch,
+  :root[data-text="large"] .drawer { zoom: 1; }
+  :root[data-text="large"] body { font-size: 18px; }
+  :root[data-text="large"] .who .name { font-size: 19px; }
+  :root[data-text="large"] .reasons, :root[data-text="large"] .finding, :root[data-text="large"] .why { font-size: 18px; }
+  :root[data-text="large"] .indoor .val { font-size: 21px; }
+  :root[data-text="large"] .pill { font-size: 14px; height: 26px; }
+  :root[data-text="large"] .route li, :root[data-text="large"] .facts, :root[data-text="large"] .formula { font-size: 16px; }
 }

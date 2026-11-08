@@ -28,7 +28,9 @@ Beyond the core:
 
 - **Wildfire smoke as a compound hazard.** Smoke hours close windows in the thermal model, and add risk for clients with COPD, asthma or heart disease (`smoke + COPD`).
 - **6-hour forecast.** Each client shows whether they will turn urgent in the next six hours, so workers go before a home turns red.
-- **Phone-list comparison.** Each client's position on an oldest-first call list is shown beside their HeatRoute rank.
+- **Phone-list comparison.** One switch reorders the queue the way agencies call today, oldest first. Urgent clients are highlighted and a line marks where the first *N* calls end, so the gap is visible: at 18:00 on July 17 the first 8 calls reach 1 of the 8 urgent clients.
+- **Guided demo.** An 8-step walkthrough of the story below, with a caption at each step. It works with a presentation clicker (PageDown/PageUp), and `?tour=N` resumes at step N. Every figure it quotes is checked by `backend/tests/test_tour.py`.
+- **Larger text and high contrast** toggles, remembered per browser; high contrast turns on by itself when the operating system asks for more contrast.
 - **Three real events, one codebase:** Edmonton July 2024 (heat + smoke), Edmonton June 2021 heat dome, Metro Vancouver June 2021 heat dome.
 - **Printable route sheet** for workers without the app.
 
@@ -47,12 +49,12 @@ These are simulated homes driven by real weather, not measured outcomes. Validat
 
 ## Demo (5 minutes)
 
-Open the app (it starts at **Edmonton · July 2024**). Any moment can be bookmarked: the URL carries the scenario, time, open client and routes.
+Press **Guided demo** to have the app walk through these steps with captions (← → or a presentation clicker to move), or do it by hand. Open the app (it starts at **Edmonton · July 2024**). Any moment can be bookmarked: the URL carries the scenario, time, open client and routes.
 
 1. **Jul 15, 09:00:** everyone is green.
 2. Click **Margaret T.**: 84, sixth floor, south-facing, no AC, lives alone, heart disease.
 3. Drag to **Jul 16, 12:00**. Margaret is still green, but her row says *Forecast: urgent by 18:00*. A worker can go before her home turns dangerous.
-4. Drag to **Jul 17, 18:00**. Margaret is #1 at 34.8°C indoors. **Gordon B.**, 91 (ground floor, north-facing, AC), stays green, older but safe. The top line reads: *an oldest-first call list would reach Margaret at call #24.* Of the 8 urgent clients, the phone list's first 8 calls reach one.
+4. Drag to **Jul 17, 18:00**. Margaret is #1 at 34.8°C indoors. **Gordon B.**, 91 (ground floor, north-facing, AC), stays green, older but safe. Switch the queue to **Oldest first**: of the 8 urgent clients, the phone list's first 8 calls reach one, and Margaret is call #24.
 5. Drag to **Jul 21, 12:00**. The smoke notice appears. **Walter K.**, 77, COPD, is on watch with `smoke + COPD` and forecast urgent by 18:00. By Jul 22 the urgent count has grown from 8 to 18.
 6. Click **Plan routes** with 3 workers: each worker's first stop is one of the three most urgent clients; routes and ETAs show on the map.
 7. Open Margaret and press **Moved to cooling centre**: she drops to *Handled*, and the queue and routes re-rank.
@@ -67,7 +69,7 @@ Needs Python 3.11+ and Node 20+.
 ```bash
 make setup     # venv + pip install, npm install
 make dev       # API on :8000 and frontend on :5173 (open http://localhost:5173)
-make test      # 39 tests: simulator, risk engine, routing, and the demo sequence end to end
+make test      # 46 tests: simulator, risk engine, routing, and the demo sequence end to end
 ```
 
 Production, as deployed: `make build && make api` serves everything on `:8000`, or `make docker` builds and runs the exact image Render runs. Frontend only, no backend: `cd frontend && VITE_USE_MOCKS=1 npm run dev` (renders the contract fixtures).
@@ -150,7 +152,8 @@ The user is a coordinator at a desk during a long, stressful shift, and often ha
 - **A reason on every row,** in plain words, so a rank can be defended out loud.
 - **Large, calm type:** 15–18px body, tabular figures so temperatures line up.
 - **Keyboard first:** the time strip is a real slider (arrow keys step an hour), ↑/↓ moves through the queue, Enter opens a client, Esc closes. Every control has a visible focus ring and an accessible name; screen readers hear the time and temperature as the slider moves.
-- **Forgiving:** moving the slider back hides visits logged later; *Reset demo* clears the log.
+- **Larger text and high contrast** for tired eyes, projectors and low vision; both are one click in the header, remembered, and available by link (`?text=large`, `?contrast=high`). High contrast follows the operating system's preference by default.
+- **Forgiving:** moving the slider back hides visits logged later; *Reset demo* clears the log; leaving the guided demo removes the visit it logged.
 - **Works without the app:** the route sheet prints cleanly for workers in the field.
 - **Responsive** down to phone width for a supervisor checking in.
 

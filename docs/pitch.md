@@ -1,6 +1,6 @@
 # HeatRoute pitch: 5 minutes
 
-Open before you start: the app at `/?scenario=edmonton_2024&t=2024-07-15T09:00`, visit log reset, browser zoom 110%. Backup: a screen recording of the same run, and the local server (`make build && make api`) in case the venue Wi-Fi fails.
+Open before you start: the app with **Guided demo** started (or `/?tour=1`), browser zoom 110%. Advance with → or a presentation clicker; if you get lost, `/?tour=N` jumps straight to step N. Turn on **High contrast** if the projector is washed out. Backup: a screen recording of the same run, and the local server (`make build && make api`) in case the venue Wi-Fi fails.
 
 ## 0:00 – 0:40 · The problem
 
@@ -18,7 +18,7 @@ Open before you start: the app at `/?scenario=edmonton_2024&t=2024-07-15T09:00`,
 2. **Click Margaret.** "Margaret, 84. Sixth floor, south-facing, no AC, lives alone, heart disease."
 3. **Drag to Jul 16, noon.** "She's still green. But look: *forecast urgent by 18:00*. HeatRoute runs the same model six hours ahead, so a worker can be there before her apartment gets dangerous."
 4. **Drag to Jul 17, 18:00.** "Outside it's 30. Inside Margaret's apartment it's 34.8, and it's been over 31 for five hours. She's #1, and here's why, in plain words. An oldest-first phone list would reach her at **call 24**." Point at Gordon: "Gordon is 91, older, but ground floor, north-facing, with AC. He's fine, and HeatRoute knows it."
-5. **The killer number.** "Right now there are 8 urgent clients. The phone list's first 8 calls reach **one** of them. It takes 58 calls to reach them all."
+5. **The killer number.** Flip the queue to **Oldest first**. "This is today's phone list for the same hour. There are 8 urgent clients. The first 8 calls reach **one** of them. It takes 58 calls to reach them all."
 6. **Drag to Jul 21, noon.** "Wildfire smoke, the week Jasper burned. People are told to close their windows, so homes without AC can't cool down at night. Walter, 77, has COPD. He doesn't live alone, so a phone list wouldn't worry, but he's flagged `smoke + COPD` and forecast urgent by six. By tomorrow the urgent list grows from 8 to 18."
 7. **Plan routes, 3 workers.** "Every worker starts at one of the three most urgent clients, then takes nearby ones. ETAs included, and it prints for workers in the field."
 8. **Margaret → Moved to cooling centre.** "Logged. The queue re-ranks and the routes update."
