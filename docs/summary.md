@@ -26,7 +26,9 @@ It also models **wildfire smoke** (closed windows, extra risk for lung and heart
 - **A transparent, testable score.** Exposure in degree-hours above BCCDC's 26°C and 31°C thresholds over 24 h, with a penalty for nights without relief; vulnerability points for age, living alone, no AC, conditions, mobility, cognition and smoke sensitivity. Exposure gates the score, so a frail person in a cool home is not flagged, and a hard rule escalates anyone alone at ≥31°C for 3 hours. All weights live in one config file.
 - **Routing that respects priority.** Each worker starts at one of the most urgent clients; the rest go to the nearest worker; the planner keeps the shorter of that plan and plain round-robin. That saves 10–30% of driving in 11 of 12 test cases.
 - **Accessible by design.** Bands are words and colours, every row carries its reason, the whole tool works by keyboard, larger-text and high-contrast modes are one click away, and the route sheet prints.
-- **Built for a reliable demo.** Pure-function risk and routing modules with 46 tests, including ones that play the entire demo and check every figure the guided walkthrough quotes; a reset endpoint; bookmarkable URLs; one Docker image deployed on Render.
+- **Built for a reliable demo.** Pure-function risk and routing modules with 65 tests, including ones that play the entire demo and check every figure the guided walkthrough quotes; a reset endpoint; bookmarkable URLs; one Docker image deployed on Render.
+
+- **Optional live sensors.** An ECG heart-rate sensor (EXG Pill + Arduino Nano, our own R-peak detector) and an ESP32 check-in button feed the same rules: a high heart rate in a hot home, a Help press, or a missed check-in during a heat warning escalates the client; "I'm OK" saves a visit unless a danger signal says otherwise. An on-screen simulator covers them when no hardware is present.
 
 ## Results
 

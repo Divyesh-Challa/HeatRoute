@@ -6,7 +6,7 @@ in isolation.
 from __future__ import annotations
 
 import math
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from datetime import datetime, timedelta
 
 from sim.roster import Client
@@ -222,3 +222,68 @@ def queue_key(a: Assessment) -> tuple:
     """Sort order for the coordinator's list: open cases first, escalated rule-hits on top."""
     open_case = a.status == "needs_visit"
     return (not open_case, not a.escalated, -a.score, -a.breakdown.get("vulnerability", 0))
+
+
+@dataclass(frozen=True)
+class LiveState:
+    """What the live devices bound to one client say right now (wall clock)."""
+    hr_bpm: float | None = None
+    hr_age_s: float | None = None
+    checkin: str | None = None  # "ok" | "help" | None
+    checkin_age_s: float | None = None
+    prompt_pending: bool = False
+    prompt_seconds_left: float | None = None
+    prompt_missed: bool = False
+    online: bool = False
+
+    def hr_fresh(self) -> bool:
+        return self.hr_bpm is not None and self.hr_age_s is not None and self.hr_age_s <= C.HR_FRESH_S
+
+    def summary(self) -> dict:
+        return {
+            "hr_bpm": round(self.hr_bpm) if self.hr_fresh() else None,
+            "checkin": self.checkin,
+            "prompt_pending": self.prompt_pending,
+            "prompt_missed": self.prompt_missed,
+            "online": self.online,
+        }
+
+
+def apply_live(a: Assessment, live: LiveState, heat_warning: bool) -> Assessment:
+    """Overlay live sensor signals on a client's assessment. Safety signals always win over "I'm OK"."""
+    if a.status in ("relocated", "escalated"):
+        return replace(a, breakdown={**a.breakdown, "live": live.summary()})
+
+    hr_high = live.hr_fresh() and live.hr_bpm >= C.HR_ELEVATED_BPM  # type: ignore[operator]
+    hot = a.indoor_c >= C.T_WARM
+    help_ = live.checkin == "help"
+    missed = live.prompt_missed and heat_warning
+    escalated = a.escalated or help_ or missed or (hr_high and hot)
+
+    front = (["pressed Help"] if help_ else []) + (["missed check-in"] if missed else [])
+    temp = [r for r in a.reasons[:1] if "°C" in r]
+    hr = [f"heart rate {round(live.hr_bpm)} bpm"] if hr_high else []  # type: ignore[arg-type]
+    rest = [r for r in a.reasons if r not in temp]
+    reasons = front + temp + hr + rest
+
+    status, score = a.status, a.score
+    ok_recent = live.checkin == "ok" and (live.checkin_age_s or 0) <= C.CHECKIN_OK_S
+    if escalated and status == "visited_ok":
+        status = "needs_visit"  # a fresh danger signal overrides an earlier "fine"
+    elif ok_recent and not escalated and status == "needs_visit":
+        status = "checked_in"
+        score = round(score * C.OK_SCORE_FACTOR, 1)
+        reasons = ["checked in: OK"] + reasons
+    elif ok_recent and escalated:
+        # Responsive, but still alone in a dangerous home: keep the visit, show the check-in.
+        reasons = reasons[:2] + ["checked in: OK"] + reasons[2:]
+
+    return replace(
+        a,
+        score=score,
+        status=status,
+        escalated=escalated,
+        band=band_for(score, escalated),
+        reasons=reasons[:4],
+        breakdown={**a.breakdown, "live": live.summary()},
+    )

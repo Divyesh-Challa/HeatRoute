@@ -31,6 +31,7 @@ export const STATUS_LABEL: Record<Status, string> = {
   visited_ok: "Checked, OK",
   relocated: "At cooling centre",
   escalated: "911 called",
+  checked_in: "Checked in: OK",
 };
 
 export const OUTCOME_LABEL: Record<Outcome, string> = {

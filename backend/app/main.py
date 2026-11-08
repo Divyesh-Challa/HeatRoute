@@ -1,10 +1,11 @@
 """HeatRoute API. Run: uvicorn backend.app.main:app --reload (from the repo root)."""
 from __future__ import annotations
 
+import os
 from datetime import datetime, timedelta
 from pathlib import Path
 
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, Header, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
@@ -12,17 +13,18 @@ from fastapi.staticfiles import StaticFiles
 from sim.scenarios import DEFAULT_SCENARIO, SCENARIOS
 
 from . import config as C
-from .risk import Assessment, Visit, assess, queue_key
+from .risk import Assessment, LiveState, Visit, apply_live, assess, queue_key
 from .routing import Stop, plan_routes
 from .schemas import (
-    ClientDetail, Counts, HourOut, RankedClient, RankedOut, RouteOut, RouteRequest,
+    ClientDetail, Counts, HourOut, LiveIn, LiveOut, PromptIn, RankedClient, RankedOut, RouteOut, RouteRequest,
     ScenarioOut, TempPoint, TimelineOut, VisitOut, VisitRequest,
 )
-from .store import VisitLog, World, default_db_path, world
+from .store import LiveLog, VisitLog, World, default_db_path, world
 
 app = FastAPI(title="HeatRoute", version="1.0")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 visits = VisitLog(default_db_path())
+live = LiveLog(default_db_path())
 
 FMT = "%Y-%m-%dT%H:%M"
 
@@ -59,13 +61,21 @@ def phone_list(w: World) -> dict[str, int]:
     return {c.id: i + 1 for i, c in enumerate(order)}
 
 
-def rank_all(w: World, idx: int) -> list[tuple[str, Assessment, str]]:
+def heat_warning_at(w: World, idx: int) -> bool:
+    return max(h.outdoor_c for h in w.weather[max(0, idx - 23) : idx + 1]) >= C.HEAT_WARNING_OUTDOOR_C
+
+
+def rank_all(w: World, idx: int, state: LiveState | None = None) -> list[tuple[str, Assessment, str]]:
     log = visits.all(w.scenario.id)
     fidx = min(idx + C.FORECAST_H, w.last_idx)
+    state = state or live.state()
+    warning = heat_warning_at(w, idx)
     rows = []
     for c in w.roster:
         a = assess(c, w.indoor[c.id], w.weather, idx, log)
         f = assess(c, w.indoor[c.id], w.weather, fidx, log)
+        if c.id == C.LIVE_CLIENT:
+            a = apply_live(a, state, warning)
         rows.append((c.id, a, f.band))
     rows.sort(key=lambda r: queue_key(r[1]))
     return rows
@@ -80,6 +90,7 @@ def to_ranked(w: World, rank: int, cid: str, a: Assessment, fband: str, phone: d
         indoor_c=a.indoor_c, hours_above_26=a.hours_above_26, hours_above_31=a.hours_above_31,
         escalated=a.escalated, reasons=a.reasons, status=a.status,
         last_visit=visit_out(w, a.last_visit), phone_list_rank=phone[cid], breakdown=a.breakdown,
+        live=a.breakdown.get("live"),
     )
 
 
@@ -118,10 +129,9 @@ def ranked(scenario: str = DEFAULT_SCENARIO, t: str | None = None) -> RankedOut:
     clients = [to_ranked(w, i + 1, cid, a, fb, phone) for i, (cid, a, fb) in enumerate(rows)]
     open_ = [c for c in clients if c.status == "needs_visit"]
     hour = w.weather[idx]
-    day_max = max(h.outdoor_c for h in w.weather[max(0, idx - 23) : idx + 1])
     return RankedOut(
         t=hour.t.strftime(FMT), outdoor_c=hour.outdoor_c, smoke=hour.smoke,
-        heat_warning=day_max >= C.HEAT_WARNING_OUTDOOR_C,
+        heat_warning=heat_warning_at(w, idx),
         counts=Counts(
             red=sum(c.band == "red" for c in open_),
             amber=sum(c.band == "amber" for c in open_),
@@ -174,6 +184,8 @@ def log_visit(req: VisitRequest) -> dict:
     if req.client_id not in w.by_id:
         raise HTTPException(404, f"unknown client {req.client_id!r}")
     visits.add(req.scenario, req.client_id, w.weather[index_at(w, req.t)].t, req.outcome)
+    if req.client_id == C.LIVE_CLIENT:
+        live.add("coordinator", "clear")  # a visit answers any Help press or check-in request
     return {"ok": True}
 
 
@@ -186,7 +198,67 @@ def list_visits(scenario: str = DEFAULT_SCENARIO) -> list[VisitOut]:
 @app.post("/api/reset")
 def reset(scenario: str | None = None) -> dict:
     visits.reset(scenario)
+    live.reset()
     return {"ok": True}
+
+
+# ---------- Live sensors (optional hardware) ----------
+
+def device_key() -> str:
+    return os.environ.get("HEATROUTE_DEVICE_KEY", "")
+
+
+@app.post("/api/live")
+def live_in(req: LiveIn, x_device_key: str | None = Header(None)) -> dict:
+    """From the ESP32, the USB bridge, or the on-screen simulator."""
+    if device_key() and x_device_key != device_key():
+        raise HTTPException(401, "missing or wrong X-Device-Key")
+    if req.hr_bpm is not None:
+        live.add(req.device_id, "hr", req.hr_bpm)
+    if req.event:
+        live.add(req.device_id, req.event)
+    return {"ok": True}
+
+
+@app.get("/api/live", response_model=LiveOut)
+def live_out() -> LiveOut:
+    st = live.state()
+    hr_elevated = st.hr_fresh() and (st.hr_bpm or 0) >= C.HR_ELEVATED_BPM
+    ok_recent = st.checkin == "ok" and (st.checkin_age_s or 0) <= C.CHECKIN_OK_S
+    name = world(DEFAULT_SCENARIO).by_id[C.LIVE_CLIENT].name
+    return LiveOut(
+        rev=f"{live.rev()}-{int(st.online)}{int(st.hr_fresh())}{int(hr_elevated)}{int(ok_recent)}{int(st.prompt_missed)}",
+        key_required=bool(device_key()),
+        client_id=C.LIVE_CLIENT,
+        client_name=name,
+        online=st.online,
+        hr_bpm=round(st.hr_bpm) if st.hr_fresh() else None,
+        hr_age_s=st.hr_age_s,
+        hr_elevated=hr_elevated,
+        checkin=st.checkin,  # type: ignore[arg-type]
+        checkin_age_s=st.checkin_age_s,
+        prompt_pending=st.prompt_pending,
+        prompt_seconds_left=st.prompt_seconds_left,
+        prompt_missed=st.prompt_missed,
+        devices=live.devices(),
+        hr_history=live.hr_history(),
+    )
+
+
+@app.post("/api/live/prompt")
+def live_prompt(req: PromptIn) -> dict:
+    """Coordinator asks the client to press a button; unanswered after PROMPT_TIMEOUT_S it counts as missed."""
+    if req.client_id != C.LIVE_CLIENT:
+        raise HTTPException(400, "no live device is bound to this client")
+    live.request_checkin(req.client_id)
+    return {"ok": True, "timeout_s": C.PROMPT_TIMEOUT_S}
+
+
+@app.get("/api/live/{device_id}/prompt")
+def live_prompt_poll(device_id: str) -> dict:
+    """The ESP32 polls this to know when to blink its LED."""
+    st = live.state()
+    return {"pending": st.prompt_pending, "missed": st.prompt_missed}
 
 
 # Production: serve the built frontend from the same origin.

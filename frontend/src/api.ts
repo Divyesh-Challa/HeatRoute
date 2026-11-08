@@ -1,4 +1,4 @@
-import type { ClientDetail, Outcome, Ranked, Route, Scenario, Timeline, VisitRecord } from "./types";
+import type { ClientDetail, LiveStatus, Outcome, Ranked, Route, Scenario, Timeline, VisitRecord } from "./types";
 import scenariosMock from "./mocks/scenarios.json";
 import timelineMock from "./mocks/timeline.json";
 import rankedMock from "./mocks/ranked.json";
@@ -21,6 +21,11 @@ async function call<T>(path: string, init?: RequestInit): Promise<T> {
 
 const q = (o: Record<string, string | number>) => new URLSearchParams(Object.entries(o).map(([k, v]) => [k, String(v)]));
 const mock = <T,>(data: unknown) => Promise.resolve(data as T);
+const LIVE_OFFLINE: LiveStatus = {
+  rev: "0", key_required: false, client_id: "c01", client_name: "Margaret T.", online: false,
+  hr_bpm: null, hr_age_s: null, hr_elevated: false, checkin: null, checkin_age_s: null,
+  prompt_pending: false, prompt_seconds_left: null, prompt_missed: false, devices: [], hr_history: [],
+};
 
 export const api = {
   scenarios: () => (MOCK ? mock<Scenario[]>(scenariosMock) : call<Scenario[]>("/scenarios")),
@@ -40,6 +45,11 @@ export const api = {
       : call<{ ok: boolean }>("/visits", { method: "POST", body: JSON.stringify({ scenario, client_id, t, outcome }) }),
   visits: (scenario: string) =>
     MOCK ? mock<VisitRecord[]>(visitsMock) : call<VisitRecord[]>(`/visits?${q({ scenario })}`),
+  live: () => (MOCK ? mock<LiveStatus>(LIVE_OFFLINE) : call<LiveStatus>("/live")),
+  postLive: (body: { device_id: string; hr_bpm?: number; event?: "ok" | "help" | "ping" }) =>
+    MOCK ? mock<{ ok: boolean }>({ ok: true }) : call<{ ok: boolean }>("/live", { method: "POST", body: JSON.stringify(body) }),
+  requestCheckin: (client_id: string) =>
+    MOCK ? mock<{ ok: boolean }>({ ok: true }) : call<{ ok: boolean }>("/live/prompt", { method: "POST", body: JSON.stringify({ client_id }) }),
   reset: (scenario: string) =>
     MOCK ? mock<{ ok: boolean }>({ ok: true }) : call<{ ok: boolean }>(`/reset?${q({ scenario })}`, { method: "POST" }),
 };

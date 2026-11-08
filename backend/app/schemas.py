@@ -6,7 +6,7 @@ from typing import Literal
 from pydantic import BaseModel, Field
 
 Band = Literal["red", "amber", "green", "unknown"]
-Status = Literal["needs_visit", "visited_ok", "relocated", "escalated"]
+Status = Literal["needs_visit", "visited_ok", "relocated", "escalated", "checked_in"]
 Outcome = Literal["ok", "moved_to_cooling", "called_911"]
 
 
@@ -63,6 +63,7 @@ class RankedClient(BaseModel):
     last_visit: VisitOut | None
     phone_list_rank: int
     breakdown: dict
+    live: dict | None = None  # only on the client a live device is bound to
 
 
 class Counts(BaseModel):
@@ -123,3 +124,37 @@ class VisitRequest(BaseModel):
     client_id: str
     t: str
     outcome: Outcome
+
+
+class LiveIn(BaseModel):
+    device_id: str = Field(min_length=1, max_length=40)
+    hr_bpm: float | None = Field(None, ge=30, le=230)
+    event: Literal["ok", "help", "ping"] | None = None
+
+
+class LiveDevice(BaseModel):
+    device_id: str
+    last_seen_s: float
+    online: bool
+
+
+class LiveOut(BaseModel):
+    rev: str  # changes whenever anything the UI shows changes
+    key_required: bool
+    client_id: str
+    client_name: str
+    online: bool
+    hr_bpm: float | None
+    hr_age_s: float | None
+    hr_elevated: bool
+    checkin: Literal["ok", "help"] | None
+    checkin_age_s: float | None
+    prompt_pending: bool
+    prompt_seconds_left: float | None
+    prompt_missed: bool
+    devices: list[LiveDevice]
+    hr_history: list[dict]
+
+
+class PromptIn(BaseModel):
+    client_id: str

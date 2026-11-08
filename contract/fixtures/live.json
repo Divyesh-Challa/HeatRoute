@@ -1,0 +1,44 @@
+{
+ "rev": "5010-11100",
+ "key_required": false,
+ "client_id": "c01",
+ "client_name": "Margaret T.",
+ "online": true,
+ "hr_bpm": 118.0,
+ "hr_age_s": 0.0,
+ "hr_elevated": true,
+ "checkin": null,
+ "checkin_age_s": null,
+ "prompt_pending": true,
+ "prompt_seconds_left": 45.0,
+ "prompt_missed": false,
+ "devices": [
+  {
+   "device_id": "esp32-1",
+   "last_seen_s": 0.0,
+   "online": true
+  }
+ ],
+ "hr_history": [
+  {
+   "age_s": 0.0,
+   "bpm": 110
+  },
+  {
+   "age_s": 0.0,
+   "bpm": 112
+  },
+  {
+   "age_s": 0.0,
+   "bpm": 114
+  },
+  {
+   "age_s": 0.0,
+   "bpm": 116
+  },
+  {
+   "age_s": 0.0,
+   "bpm": 118
+  }
+ ]
+}

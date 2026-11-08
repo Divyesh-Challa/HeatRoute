@@ -15,5 +15,6 @@ with `VITE_USE_MOCKS=1`.
 | `client_c01.json` | `GET /api/clients/c01?scenario=edmonton_2024&t=2024-07-17T18:00` |
 | `routes.json` | `POST /api/routes {t: "2024-07-17T18:00", workers: 3, top_n: 12}` |
 | `visits.json` | `GET /api/visits` after logging Margaret as `moved_to_cooling` |
+| `live.json` | `GET /api/live` while a sensor streams 118 bpm and a check-in is pending |
 
 Times are local wall-clock hours, `YYYY-MM-DDTHH:MM`, no timezone. Interactive docs at `/docs`.

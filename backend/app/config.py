@@ -44,3 +44,15 @@ DEFAULT_WORKERS = 3
 ROAD_FACTOR = 1.3  # straight-line → road distance
 SPEED_KMH = 30.0
 VISIT_MINUTES = 20
+
+# Live sensors (optional hardware: EXG Pill heart rate, ESP32 check-in button).
+# Every device stands in for one synthetic client's wearable; the replay slider is history,
+# the device is "now", so live readings use wall-clock freshness.
+LIVE_CLIENT = "c01"  # Margaret
+HR_ELEVATED_BPM = 100  # resting tachycardia threshold; a rapid heartbeat is a heat-illness warning sign
+HR_MIN_BPM, HR_MAX_BPM = 30, 230  # anything outside is a bad reading
+HR_FRESH_S = 15  # a heart rate older than this is ignored
+DEVICE_ONLINE_S = 20  # a device is "online" if it was heard from this recently
+CHECKIN_OK_S = 600  # "I'm OK" lowers priority for 10 minutes of wall-clock time
+PROMPT_TIMEOUT_S = 45  # an unanswered check-in request becomes a missed check-in
+HR_HISTORY_S = 90  # seconds of heart rate kept for the drawer chart

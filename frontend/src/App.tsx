@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { api } from "./api";
-import type { ClientDetail as Detail, Outcome, Ranked, Route, Scenario, Timeline, VisitRecord } from "./types";
+import type { ClientDetail as Detail, LiveStatus, Outcome, Ranked, Route, Scenario, Timeline, VisitRecord } from "./types";
 import TimeSlider from "./components/TimeSlider";
 import RankedList from "./components/RankedList";
 import RouteMap from "./components/RouteMap";
@@ -70,6 +70,7 @@ export default function App() {
   const [toast, setToast] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [order, setOrder] = useState<QueueOrder>("heatroute");
+  const [live, setLive] = useState<LiveStatus | null>(null);
   const [tourIndex, setTourIndex] = useState<number | null>(null);
   const [tourBusy, setTourBusy] = useState(false);
   // ?text=large and ?contrast=high override the saved preference (handy for a shared link or a projector).
@@ -202,6 +203,65 @@ export default function App() {
     return () => clearTimeout(h);
   }, [toast]);
 
+  // Live sensors: poll every 2 s while the tab is visible; any change refetches the queue through `version`.
+  const liveRev = useRef<string | null>(null);
+  const prevLive = useRef<LiveStatus | null>(null);
+  const pollLive = useCallback(async () => {
+    try {
+      const l = await api.live();
+      setLive(l);
+      if (liveRev.current !== null && l.rev !== liveRev.current) setVersion((v) => v + 1);
+      liveRev.current = l.rev;
+      const p = prevLive.current;
+      if (p) {
+        if (l.checkin === "help" && p.checkin !== "help") setToast(`${l.client_name} pressed Help. Moved to the top of the queue.`);
+        else if (l.checkin === "ok" && p.checkin !== "ok") setToast(`${l.client_name} pressed I'm OK.`);
+        if (l.prompt_missed && !p.prompt_missed) setToast(`${l.client_name} missed a check-in.`);
+        if (l.hr_elevated && !p.hr_elevated) setToast(`${l.client_name}: heart rate ${l.hr_bpm} bpm.`);
+      }
+      prevLive.current = l;
+    } catch {
+      /* the live feed is optional; the queue keeps working without it */
+    }
+  }, []);
+  useEffect(() => {
+    pollLive();
+    const h = setInterval(() => document.visibilityState === "visible" && pollLive(), 2000);
+    return () => clearInterval(h);
+  }, [pollLive]);
+
+  const simulate = useCallback(
+    async (body: { hr_bpm?: number; event?: "ok" | "help" }) => {
+      await api.postLive({ device_id: "sim", ...body }).catch((e) => setError(`Simulator: ${e.message}`));
+      pollLive();
+    },
+    [pollLive],
+  );
+  // The simulator keeps sending while it is on, even with the drawer closed, like a worn device would.
+  const [simHr, setSimHr] = useState(72);
+  const [simStreaming, setSimStreaming] = useState(false);
+  useEffect(() => {
+    if (!simStreaming) return;
+    const send = () => api.postLive({ device_id: "sim", hr_bpm: simHr }).catch(() => {});
+    const debounce = setTimeout(() => send().then(pollLive), 250);
+    const h = setInterval(send, 4000);
+    return () => {
+      clearTimeout(debounce);
+      clearInterval(h);
+    };
+  }, [simStreaming, simHr, pollLive]);
+  const sim = useMemo(
+    () => ({ hr: simHr, setHr: setSimHr, streaming: simStreaming, setStreaming: setSimStreaming, press: (event: "ok" | "help") => simulate({ event }) }),
+    [simHr, simStreaming, simulate],
+  );
+
+  const requestCheckin = useCallback(async () => {
+    if (!live) return;
+    await api.requestCheckin(live.client_id).catch((e) => setError(`Check-in request failed: ${e.message}`));
+    setToast(`Check-in requested from ${live.client_name}. No answer in 45 s counts as missed.`);
+    pollLive();
+  }, [live, pollLive]);
+
   const logVisit = useCallback(
     async (outcome: Outcome) => {
       if (!selectedId || !t) return;
@@ -223,6 +283,7 @@ export default function App() {
   );
 
   const reset = async () => {
+    setSimStreaming(false);
     await api.reset(scenarioId);
     setVisits([]);
     setRoutes(null);
@@ -390,6 +451,15 @@ export default function App() {
               )}
             </div>
           )}
+          {live && live.devices.length > 0 && (
+            <div className="notices">
+              <button className={`notice live${live.online ? "" : " off"}`} onClick={() => setSelectedId(live.client_id)}>
+                <span className={`dot${live.online ? " live-dot" : ""}`} aria-hidden="true" />
+                {live.online ? "Live sensor" : "Sensor offline"} · {live.client_name}
+                {live.online && live.hr_bpm !== null && <span className="num"> · {live.hr_bpm} bpm</span>}
+              </button>
+            </div>
+          )}
         </div>
         {ranked && (
           <dl className="counts num" aria-label="Clients by risk">
@@ -440,7 +510,17 @@ export default function App() {
             openCount={summary?.open.length ?? 0}
           />
           {selectedId && t && (
-            <ClientDetail detail={detail?.profile.id === selectedId ? detail : null} now={t} total={ranked?.clients.length ?? 0} onClose={closeDetail} onVisit={logVisit} busy={busy} />
+            <ClientDetail
+              detail={detail?.profile.id === selectedId ? detail : null}
+              now={t}
+              total={ranked?.clients.length ?? 0}
+              onClose={closeDetail}
+              onVisit={logVisit}
+              busy={busy}
+              live={live}
+              onRequestCheckin={requestCheckin}
+              sim={sim}
+            />
           )}
         </div>
       </main>

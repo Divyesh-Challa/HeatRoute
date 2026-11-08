@@ -24,11 +24,17 @@ Open before you start: the app with **Guided demo** started (or `/?tour=1`), bro
 8. **Margaret → Moved to cooling centre.** "Logged. The queue re-ranks and the routes update."
 9. **Switch to Vancouver 2021.** "Same people, same code, another city."
 
-## 3:30 – 4:20 · How it works (show the client drawer)
+## 3:30 – 4:10 · Live sensors (optional hardware)
+
+Set up before: a teammate wearing the EXG Pill electrodes (laptop on battery), ESP32 on the table, slider at **Jul 16, 12:00** (Margaret is still green). If the hardware misbehaves, use the simulator in Margaret's drawer: same screen, same result.
+
+> "The model tells us whose home is hot. But a coordinator also wants to know how the person is doing. [Teammate] is wearing an ECG sensor standing in for Margaret's wearable." Teammate does 20 jumping jacks. "Her heart rate passes 100 in a 27-degree apartment, and she goes straight to the top: *heart rate 112 bpm*." Press **Request check-in**; the ESP32's red LED blinks. Press **I'm OK** on the table: "She answered, so no worker is wasted on her... unless the heart rate says otherwise." Press **Help**: "Top of the list."
+
+## 4:10 – 4:30 · How it works (show the client drawer)
 
 > Indoor temperature comes from a thermal model of each home: insulation, sun on south and west walls, top floors, the stack effect in apartment buildings, and smoke closing the windows. Risk is heat exposure in degree-hours above BCCDC's 26 and 31 degree thresholds, multiplied by vulnerability. Every weight is in one config file, every rule is unit-tested, and the entire demo you just saw runs as an automated test.
 
-## 4:20 – 5:00 · Path forward
+## 4:30 – 5:00 · Path forward
 
 > Next: validate the model with $30 temperature loggers in consenting homes, switch to Environment Canada's live forecast, have nurses review the weights, and pilot with one Edmonton home care provider for a summer, side by side with their phone list, measuring how fast the highest-risk people get a visit. The data stays in Canada under Alberta's Health Information Act.
 >
@@ -67,6 +73,15 @@ It's open source, and it runs on one small cloud instance per agency. Loggers ar
 
 **What happens after "moved to cooling centre"?**
 Their exposure stops accruing until 08:00 the next day, and they leave the queue. "Checked OK" lowers their priority for 4 hours, then they return if their home is still hot. "Called 911" removes them.
+
+**Why heart rate?**
+A rapid heartbeat is a warning sign of heat illness in Health Canada's guidance. On its own it's ambiguous (exercise, stress), so it only escalates someone when their home is also hot. Readings expire after 15 seconds, so a dead sensor can't keep someone at the top.
+
+**Is it safe to wear the electrodes?**
+The EXG Pill is battery-isolated when the laptop is unplugged, which is how we run it. It's a demo, not a medical device.
+
+**What if the client presses "I'm OK" but is in danger?**
+Danger wins. "I'm OK" only saves a visit when no rule fires; with a high heart rate in a hot home, or alone at ≥31°C, they stay at the top and the row shows they checked in.
 
 **What if the score is wrong?**
 Every rank shows its reasons, so a coordinator can see and override it. Escalation also has a hard rule that doesn't depend on weights: alone, at ≥31°C for 3 hours.

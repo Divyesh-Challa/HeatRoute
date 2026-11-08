@@ -33,6 +33,7 @@ Beyond the core:
 - **Larger text and high contrast** toggles, remembered per browser; high contrast turns on by itself when the operating system asks for more contrast.
 - **Three real events, one codebase:** Edmonton July 2024 (heat + smoke), Edmonton June 2021 heat dome, Metro Vancouver June 2021 heat dome.
 - **Printable route sheet** for workers without the app.
+- **Optional live sensors** ([hardware/](hardware/README.md)): an ECG heart-rate sensor (EXG Pill + Arduino Nano) and a check-in button (ESP32 Feather V2) stand in for Margaret's wearable. High heart rate in a hot home, a Help press, or a missed check-in during a heat warning moves her to the top; "I'm OK" saves a visit. A simulator in her drawer does the same with no hardware.
 
 ### Headline results (from the model, on real weather)
 
@@ -69,7 +70,7 @@ Needs Python 3.11+ and Node 20+.
 ```bash
 make setup     # venv + pip install, npm install
 make dev       # API on :8000 and frontend on :5173 (open http://localhost:5173)
-make test      # 46 tests: simulator, risk engine, routing, and the demo sequence end to end
+make test      # 65 tests: simulator, risk engine, routing, and the demo sequence end to end
 ```
 
 Production, as deployed: `make build && make api` serves everything on `:8000`, or `make docker` builds and runs the exact image Render runs. Frontend only, no backend: `cd frontend && VITE_USE_MOCKS=1 npm run dev` (renders the contract fixtures).
@@ -139,6 +140,19 @@ It is calibrated to be plausible, not exact: a no-AC top-floor unit peaks at 34�
 
 Each worker is seeded with one of the K most urgent clients, so the worst cases are reached first. The rest of the top N (default 12) are taken in rank order and given to the worker whose run currently ends nearest, with a load cap. Greedy nearest-neighbour orders each run. Plain round-robin by rank is also planned, and the shorter plan wins. On our scenarios proximity wins about 11 times in 12 and saves 10–30% of driving. Distances are haversine × 1.3 (a common straight-line-to-road factor) at 30 km/h with 20 minutes per visit. Straight lines keep it offline and instant; a road router (OSRM) or OR-Tools VRP is a drop-in replacement for one function.
 
+### Live sensors (optional)
+
+A rapid heartbeat is one of the warning signs of heat illness in Health Canada's guidance, and a person who doesn't answer a check-in during a heat warning may be unable to. `apply_live` in `backend/app/risk.py` overlays four signals on the bound client's assessment:
+
+| Signal | Effect |
+| --- | --- |
+| Heart rate ≥ 100 bpm and indoor ≥ 26°C | escalate, reason `heart rate 118 bpm` |
+| "I need help" pressed | escalate, reason `pressed Help`, until a visit is logged |
+| Check-in requested by the coordinator, no press in 45 s, during a heat warning | escalate, reason `missed check-in` |
+| "I'm OK" pressed | moved to *Handled* for 10 min, unless one of the danger rules applies |
+
+Safety signals always win: "I'm OK" never removes someone whose heart rate is high in a hot home, or who is alone at ≥31°C. The firmware does its own R-peak detection (band-pass 5–15 Hz, squared derivative, 150 ms integration, adaptive threshold, median of 8 beats). Readings expire after 15 s, so a disconnected sensor can't keep someone escalated. Wiring, flashing and the hotspot setup are in [hardware/README.md](hardware/README.md).
+
 ### Why these tools
 
 FastAPI + Pydantic so the contract is enforced in code and documented at `/docs`. Pure-function risk and routing modules so every rule is unit-tested; `backend/tests/test_api.py` plays the full demo as a test. SQLite for the visit log: zero setup and enough for one agency. React + Leaflet + Recharts on the frontend, with OpenStreetMap tiles shown in greyscale so colour on the map always means risk.
@@ -166,6 +180,7 @@ The user is a coordinator at a desk during a long, stressful shift, and often ha
 | 3. Clinical review | Review the vulnerability weights and thresholds with home care nurses and a public health physician; keep every weight in one config file. | Weights are evidence-informed, not clinically validated. |
 | 4. Partner | Pilot with one Alberta home care provider or regional health operator in Edmonton for one heat season, alongside the existing phone list. Measure time-to-first-visit for high-risk clients. | Adoption and evidence of benefit. |
 | 5. Privacy | Host in Canada; minimum data (no diagnoses beyond risk flags); role-based access and audit log; privacy impact assessment under Alberta's Health Information Act. | Health information. |
+| 5b. Sensors | Offer clients a check-in button and, with consent, a wrist heart-rate sensor; both feed the same rules through `POST /api/live`. | Responsive clients don't need a visit; silent or tachycardic ones do. |
 | 6. Integrate | Import the client list from the agency's scheduling system (CSV first); road routing (OSRM) and OR-Tools VRP with time windows; SMS check-ins for clients who can answer. | Fitting the existing workflow. |
 
 Running cost for one agency is a small cloud instance plus optional loggers. The software is open source.
@@ -177,6 +192,7 @@ Running cost for one agency is a small cloud instance plus optional loggers. The
 - Indoor temperature thresholds: BC Centre for Disease Control guidance on indoor overheating (26°C and 31°C).
 - Heat warning criterion (29°C daytime high): Environment and Climate Change Canada's Alberta heat warning criteria.
 - Map tiles and data: © OpenStreetMap contributors.
+- Heat illness warning signs (including rapid heartbeat): Health Canada heat-illness guidance.
 - Libraries: FastAPI, Pydantic, Uvicorn, React, Vite, Leaflet, react-leaflet, Recharts. Typeface: Geist.
 - **All clients are synthetic.** Names, ages, conditions and locations are invented; no real patient data is used.
 
@@ -194,4 +210,5 @@ Running cost for one agency is a small cloud instance plus optional loggers. The
 data/       weather CSVs + fetch script        sim/       weather, thermal model, roster, tests
 backend/    FastAPI app, risk, routing, tests  frontend/  React app
 contract/   API contract + fixtures            docs/      written summary, pitch script
+hardware/   Nano + ESP32 firmware, USB bridge
 ```

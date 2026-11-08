@@ -86,6 +86,19 @@ export default function RankedList({ clients, selectedId, onSelect, forecastAt, 
               ))}
             </span>
           )}
+          {c.live && !(phone && dim) && (c.live.hr_bpm !== null || c.live.checkin === "help" || c.live.prompt_pending || c.live.prompt_missed) && (
+            <span className="live-pills">
+              {c.live.hr_bpm !== null && (
+                <span className={`pill ${c.live.hr_bpm >= 100 ? "red" : "neutral"}`}>
+                  <span className="mark live-dot" aria-hidden="true" />
+                  Live <span className="num">{c.live.hr_bpm} bpm</span>
+                </span>
+              )}
+              {c.live.checkin === "help" && <span className="pill red">Pressed Help</span>}
+              {c.live.prompt_missed && <span className="pill red">Missed check-in</span>}
+              {c.live.prompt_pending && <span className="pill neutral">Check-in requested</span>}
+            </span>
+          )}
           {worsening && forecastAt && !phone && (
             <span className="forecast">
               Forecast: {c.forecast_band === "red" ? "urgent" : "watch"} by {fmtTime(forecastAt)}

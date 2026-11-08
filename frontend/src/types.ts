@@ -1,6 +1,6 @@
 // Mirrors contract/api.md. Keep in sync with backend/app/schemas.py.
 export type Band = "red" | "amber" | "green" | "unknown";
-export type Status = "needs_visit" | "visited_ok" | "relocated" | "escalated";
+export type Status = "needs_visit" | "visited_ok" | "relocated" | "escalated" | "checked_in";
 export type Outcome = "ok" | "moved_to_cooling" | "called_911";
 
 export interface Scenario {
@@ -70,6 +70,34 @@ export interface RankedClient {
   last_visit: VisitRecord | null;
   phone_list_rank: number;
   breakdown: Breakdown;
+  live?: LiveSummary | null;
+}
+
+/** On the one client a live device is bound to. */
+export interface LiveSummary {
+  hr_bpm: number | null;
+  checkin: "ok" | "help" | null;
+  prompt_pending: boolean;
+  prompt_missed: boolean;
+  online: boolean;
+}
+
+export interface LiveStatus {
+  rev: string;
+  key_required: boolean;
+  client_id: string;
+  client_name: string;
+  online: boolean;
+  hr_bpm: number | null;
+  hr_age_s: number | null;
+  hr_elevated: boolean;
+  checkin: "ok" | "help" | null;
+  checkin_age_s: number | null;
+  prompt_pending: boolean;
+  prompt_seconds_left: number | null;
+  prompt_missed: boolean;
+  devices: { device_id: string; last_seen_s: number; online: boolean }[];
+  hr_history: { age_s: number; bpm: number }[];
 }
 
 export interface Ranked {

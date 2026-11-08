@@ -7,7 +7,7 @@ Student team project for natHacks 2026, Standard Division, Healthcare & Accessib
 - **Code freeze Sunday Nov 9, 2026, 7:00 AM MDT.** Public GitHub repo + README due 11:00 AM MDT.
 - **All code is written during the competition.** No code copied from older projects. Open-source libraries are fine.
 - **Synthetic people only.** Client names, ages, conditions, and addresses are invented. Never use real patient data.
-- **No hardware required.** Everything runs on simulated indoor data driven by real outdoor weather. A physical sensor is an optional stretch goal only.
+- **No hardware required.** Everything runs on simulated indoor data driven by real outdoor weather. Live sensors (`hardware/`: EXG Pill heart rate, ESP32 check-in button) are optional; the on-screen simulator and `bridge.py --simulate` cover them, and nothing in the demo or tests depends on a device.
 - **No secrets in the repo.** `.env` is git-ignored; ship `.env.example`.
 - **Demo reliability beats feature count.** A feature that works on stage beats three half-built ones.
 
@@ -118,7 +118,11 @@ REST (backend, all under `/api`):
 | `POST /api/routes` | body `{scenario, t, workers: int, top_n: int}` → `[{worker, stops: [{client_id, name, band, eta}], path: [[lat, lon], ...], distance_km}]` |
 | `POST /api/visits` | body `{scenario, client_id, t, outcome: "ok" \| "moved_to_cooling" \| "called_911"}` → `{ok: true}` |
 | `GET /api/visits?scenario=` | `[{client_id, name, t, outcome}]` newest first |
-| `POST /api/reset?scenario=` | clears the visit log (for re-running the demo) |
+| `POST /api/reset?scenario=` | clears the visit log and live-sensor state (for re-running the demo) |
+| `POST /api/live` | from devices: `{device_id, hr_bpm?, event?: "ok" \| "help" \| "ping"}`; needs header `X-Device-Key` if `HEATROUTE_DEVICE_KEY` is set |
+| `GET /api/live` | live state of the bound client: `{rev, key_required, client_id, client_name, online, hr_bpm, hr_elevated, checkin, prompt_pending, prompt_seconds_left, prompt_missed, devices, hr_history}` |
+| `POST /api/live/prompt` | coordinator asks for a check-in: `{client_id}` |
+| `GET /api/live/{device_id}/prompt` | device polls: `{pending, missed}` |
 
 Ranked client shape:
 
@@ -141,11 +145,12 @@ Ranked client shape:
   "status": "needs_visit",
   "last_visit": null,
   "phone_list_rank": 23,
-  "breakdown": {"exposure": 41.2, "exposure_norm": 0.69, "vulnerability": 7, "smoke_bonus": 0}
+  "breakdown": {"exposure": 41.2, "exposure_norm": 0.69, "vulnerability": 7, "smoke_bonus": 0},
+  "live": {"hr_bpm": 118, "checkin": null, "prompt_pending": false, "prompt_missed": false, "online": true}
 }
 ```
 
-`band`: `red` | `amber` | `green` | `unknown`. `status`: `needs_visit` | `visited_ok` | `relocated` | `escalated`. `phone_list_rank` = position in an oldest-first list (what agencies do today).
+`band`: `red` | `amber` | `green` | `unknown`. `status`: `needs_visit` | `visited_ok` | `relocated` | `escalated` | `checked_in`. `live` is present only on the client a live device is bound to (`LIVE_CLIENT`, Margaret). `phone_list_rank` = position in an oldest-first list (what agencies do today).
 
 ## Component specs
 
@@ -153,7 +158,7 @@ Ranked client shape:
 - **Weather:** `data/weather_<scenario>.csv` with `timestamp,outdoor_c,smoke`, built from Environment Canada hourly bulk CSVs (script in `data/fetch_weather.py`, outputs committed). Edmonton temperatures from Edmonton Blatchford (urban, station 27214); smoke flag from Edmonton Intl A (station 50149) "Weather" column. Vancouver from Pitt Meadows CS (6830); YVR is ocean-cooled and undersells the event. If a file is missing, `weather.py` generates a synthetic heat-wave curve and logs a warning.
 - **Thermal model (first-order, hourly Euler step):**
   `T_in[t+1] = T_in[t] + (T_out[t] − T_in[t]) / tau + solar_gain(t) + internal_gain − ac_cooling`
-  - `tau` (hours) by insulation: poor 4, average 7, good 12. When T_out < T_in (night cooling through windows), use `tau × vent_factor`; **smoke hours close windows**, so vent_factor is large (night flushing mostly lost).
+  - `tau` (hours) by insulation: poor 6, average 10, good 14 (tuned for plausible indoor ranges; see README). When T_out < T_in (night cooling through windows), use `tau × vent_factor`; **smoke hours close windows**, so vent_factor is large (night flushing mostly lost).
   - `solar_gain` peaks mid-afternoon, scaled up for top floor and S/W orientation, zero at night.
   - `has_ac`: indoor capped near 24–25°C.
   - Start at 22°C with a 48 h spin-up. Clamp to plausible ranges. Document parameters in the README.

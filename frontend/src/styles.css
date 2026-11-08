@@ -347,6 +347,23 @@ table.factors td.num { text-align: right; }
 }
 .error { margin: 0 var(--pad) var(--gap); padding: 10px 14px; border-radius: var(--radius-control); background: var(--pill-red-bg); color: var(--pill-red-ink); }
 
+/* ---------- Live sensor ---------- */
+.notice.live { border: 0; cursor: pointer; background: var(--pill-green-bg); color: var(--pill-green-ink); font: inherit; font-size: var(--fs-small); font-weight: 500; }
+.notice.live.off { background: var(--pill-neutral-bg); color: var(--pill-neutral-ink); }
+.live-dot { animation: beat 1.2s ease-in-out infinite; }
+@keyframes beat { 0%, 100% { transform: scale(1); } 15% { transform: scale(1.45); } 30% { transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) { .live-dot { animation: none; } }
+.live-pills { grid-column: 2 / 4; display: flex; flex-wrap: wrap; gap: 6px; }
+.live-grid { display: grid; grid-template-columns: 150px 1fr; gap: 16px; align-items: center; }
+.live-bpm { font-size: 36px; font-weight: 500; line-height: 1.1; }
+.live-bpm .unit { font-size: 16px; color: var(--muted); }
+.live-alert { color: var(--pill-red-ink); font-weight: 500; }
+details.sim { margin-top: 14px; background: var(--raised); border-radius: var(--radius-control); padding: 10px 12px; }
+details.sim summary { cursor: pointer; font-size: 14px; font-weight: 500; }
+.sim-body { display: grid; gap: 10px; margin-top: 10px; }
+.sim-hr { font-size: 14px; }
+.sim-body input[type="range"] { width: 100%; accent-color: var(--primary); }
+
 /* ---------- Narrow screens ---------- */
 @media (max-width: 1100px) {
   .app { height: auto; }

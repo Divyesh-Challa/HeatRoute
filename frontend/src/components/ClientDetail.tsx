@@ -1,8 +1,9 @@
 import { useEffect, useRef } from "react";
 import { CartesianGrid, Line, LineChart, ReferenceArea, ReferenceLine, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
-import type { ClientDetail as Detail, Outcome } from "../types";
+import type { ClientDetail as Detail, LiveStatus, Outcome } from "../types";
 import BandPill from "./BandPill";
 import VisitButtons from "./VisitButtons";
+import LiveSensor, { type SimControls } from "./LiveSensor";
 import { STATUS_LABEL, fmtC, fmtTime, fmtWhen, OUTCOME_LABEL } from "../format";
 
 interface Props {
@@ -12,12 +13,15 @@ interface Props {
   onClose: () => void;
   onVisit: (o: Outcome) => void;
   busy: boolean;
+  live: LiveStatus | null;
+  onRequestCheckin: () => void;
+  sim: SimControls;
 }
 
 const ORIENT = { N: "north", E: "east", S: "south", W: "west" } as const;
 const ordinal = (n: number) => (n === 0 ? "ground" : `${n}${["th", "st", "nd", "rd"][n % 10 > 3 || [11, 12, 13].includes(n % 100) ? 0 : n % 10]}`);
 
-export default function ClientDetail({ detail, now, total, onClose, onVisit, busy }: Props) {
+export default function ClientDetail({ detail, now, total, onClose, onVisit, busy, live, onRequestCheckin, sim }: Props) {
   const closeRef = useRef<HTMLButtonElement>(null);
   useEffect(() => {
     closeRef.current?.focus();
@@ -93,6 +97,8 @@ export default function ClientDetail({ detail, now, total, onClose, onVisit, bus
             </p>
           )}
         </section>
+
+        {a.live && <LiveSensor live={live} onRequestCheckin={onRequestCheckin} sim={sim} />}
 
         <section aria-labelledby="chart-title">
           <h3 id="chart-title">Indoor temperature, last 24 h and next 6 h</h3>
